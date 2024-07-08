@@ -1,0 +1,446 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+
+  font-family: 'Anton', sans-serif;
+  font-size: 15px;
+  background-color: black;
+  transition: background-color 0.3s;
+  animation: fadeIn 2s ease-in-out, blurOut 2s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes blurOut {
+  from {
+    filter: blur(5px);
+  }
+
+  to {
+    filter: blur(0);
+  }
+}
+
+.anton-regular {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.thin-font {
+  font-weight: 300;
+  letter-spacing: 0.05em;
+}
+
+::selection {
+  color: black;
+  background-color: white;
+}
+
+body.white-background ::selection {
+  color: white;
+  background-color: black;
+}
+
+
+
+/* relevant */
+
+
+/* top navbar */
+
+.navbar {
+  display: flex;
+  position: fixed;
+  justify-content: space-between;
+  top: -200px;
+  left: 0;
+  width: 100%;
+  background-color: black;
+  padding: 30px;
+  padding-bottom: 5px;
+  position: sticky;
+  transition: top 0.5s ease ;
+}
+
+.navbar.show {
+  display: flex;
+  /* Display as flex when visible */
+  top: 0;
+}
+
+.teanjd {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.teanjd img {
+  max-width: 40%;
+
+}
+
+.social {
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.social a {
+  margin: 0 30px;
+  padding: 10px 10px;
+
+}
+
+.social a {
+  font-size: 2em;
+  text-decoration: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: auto;
+  gap: 0;
+  max-width: 100%;
+}
+
+.welcome {
+  grid-column: span 9;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  justify-content: center;
+  max-width: 100%;
+  position: relative;
+  padding-bottom: 250px;
+}
+
+.welcome img {
+  grid-column: span 9;
+  justify-self: center;
+  max-width: 50%;
+}
+
+
+/* styles for arrow animation */
+
+.arrow-wrapper {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: bounce 1s linear infinite, showArrowWrappers 3s linear forwards;
+}
+
+@keyframes showArrowWrappers {
+
+  0%,
+  70% {
+    opacity: 0;
+  }
+
+  75% {
+    opacity: 1;
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  100% {
+    transform: translateX(-50%) translateY(30px);
+  }
+}
+
+@keyframes flashIn {
+  5% {
+    opacity: 1;
+  }
+
+  13%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.arrow {
+  width: 0px;
+  height: 0px;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-top: 34px solid rgba(255, 255, 255, 1);
+  opacity: 1;
+  animation: flashIn 3s linear infinite;
+}
+
+.arrow.arrow1 {
+  position: absolute;
+  animation-delay: 0s;
+}
+
+.arrow.arrow2 {
+  position: absolute;
+  transform: translateY(25px);
+  animation-delay: 0.15s;
+
+}
+
+.arrow.arrow3 {
+  position: absolute;
+  transform: translateY(50px);
+  animation-delay: 0.3s;
+
+}
+
+.huomio {
+  grid-column: span 9;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+}
+
+.huomioimg {
+  grid-column: span 1;
+  max-width: 100%;
+}
+
+.huomioimg img {
+  max-width: 100%;
+}
+
+.huomiotext {
+  grid-column: span 1;
+  text-align: left;
+  background-color: #333;
+  align-content: center;
+}
+
+/* nav a:hover {
+  border-bottom: 4px solid black;
+}
+
+
+nav h1 {
+  font-size: 6em;
+  padding: 0;
+  margin: 0;
+  justify-content: flex-end;
+  color: white;
+  text-shadow:
+    -2px -2px 0 #000,
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+    2px 2px 0 #000;
+}
+
+nav h1:hover {
+  color: #000;
+  text-shadow:
+    -2px -2px 0 white,
+    2px -2px 0 white,
+    -2px 2px 0 white,
+    2px 2px 0 white;
+}
+
+nav .social a {
+  font-size: 2em;
+} */
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.sormukset {
+  grid-column: span 9;
+  margin: 200px auto;
+  font-size: 5em;
+  justify-content: center;
+  color: white;
+  text-shadow:
+    -2px -2px 0 #000,
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+    2px 2px 0 #000;
+}
+
+
+
+.cards {
+  grid-column: span 9;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  justify-content: center;
+  align-items: center;
+  padding: 0 40px;
+}
+
+.cardandimg {
+  grid-column: span 1;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  justify-content: center;
+  align-items: center;
+  padding: 0 40px;
+  gap: 70px;
+}
+
+.cardandimg .card {
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  grid-column: span 5;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(#333, black);
+  color: white;
+  margin: 200px 0;
+  border-radius: 30px;
+  padding: 60px;
+
+}
+
+.cardandimg .card.contactcard {
+  border: 2px solid white;
+}
+
+.cardandimg .card.contactcard h1 {
+  color: rgb(253, 253, 159);
+}
+
+.cardandimg .imageforcard {
+  grid-column: span 3;
+
+}
+
+.imageforcard img {
+  width: 500px;
+}
+
+
+
+/* .carousel {
+  position: relative;
+  background-color: white;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.carousel:before,
+.carousel:after {
+  position: absolute;
+  top: 0;
+  width: 200px;
+  height: 100%;
+  z-index: 2;
+  content: '';
+}
+
+.carousel:before {
+  left: 0;
+  background: linear-gradient(to right, rgb(255, 255, 255), rgba(0, 0, 0, 0));
+}
+
+.carousel:after {
+  right: 0;
+  background: linear-gradient(to left, rgb(255, 255, 255), rgba(0, 0, 0, 0));
+}
+
+.carousel-slide {
+  display: inline-block;
+  padding: 30px;
+  animation: 50s slide infinite linear;
+}
+
+.carousel-slide img {
+  height: 300px;
+  margin: 0 30px;
+
+} */
+
+/* .carousel-slide:hover {
+  animation-play-state: paused;
+} */
+
+
+.infotext {
+  font-family: 'Roboto';
+  padding: 40px 30px;
+  grid-column: span 2;
+  font-size: 1.3em;
+
+}
+
+.infotext p {
+  display: flex;
+  padding-bottom: 50px;
+}
+
+.infopic {
+  width: 100%;
+  grid-column: span 3;
+}
+
+.infopic img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+footer {
+
+  background-color: #1b1b1b;
+  margin-top: 15px;
+}
+
+.footerinfo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  color: white;
+  align-items: center;
+  padding: 20px;
+}
+
+footer ul,
+p {
+
+  text-align: center;
+}
+
+footer ul {
+  list-style-type: none;
+}
