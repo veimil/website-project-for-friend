@@ -1,0 +1,549 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* variables */
+:root {
+    --primary: rgb(253, 253, 159);
+    --secondary: #ececec;
+    --semidark: #454545;
+    --darker: #333;
+}
+
+html {
+    font-size: 1em;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--secondary);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    /* does not include margins */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    color: var(--secondary);
+    text-align: left;
+    background-color: black;
+    overflow-x: hidden;
+    transition: background-color 0.3s;
+    animation: fadeIn 2s ease-in-out forwards, blurOut 2s ease-in-out forwards;
+}
+
+h1 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    color: var(--secondary);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes blurOut {
+    from {
+        filter: blur(10px);
+    }
+
+    to {
+        filter: blur(0);
+    }
+}
+
+
+::selection {
+    background-color: rgb(202, 180, 255);
+    color: black;
+}
+
+
+/* top navbar */
+
+header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+    background: linear-gradient(rgb(57, 57, 57), black);
+    z-index: 1000;
+    transition: height 0.2s ease, padding 0.3s ease;
+}
+
+/* header ul {
+    display: none;
+    justify-content: center;
+    transform: translateY(-2px);
+    align-items: center;
+}
+
+header ul a {
+    font-size: 1.2em;
+
+} */
+
+header .logo {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    max-height: 100%;
+    transition: max-width 0.2s ease;
+}
+
+header .logo img {
+    object-fit: contain;
+    max-width: 100%;
+    max-width: 100%;
+}
+
+/* header.scrolled{
+} */
+
+header.scrolled .logo {
+    max-width: 60%;
+}
+
+/* header.scrolled ul {
+    display: flex;
+} */
+
+
+main {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: auto;
+    max-width: 100vw;
+}
+
+.welcome {
+    grid-column: span 9;
+    position: relative;
+    padding-top: 50px;
+    padding-bottom: 200px;
+}
+
+.welcomeimg {
+    text-align: center;
+}
+
+.welcome img {
+    max-width: 100%;
+}
+
+
+/* styles for arrow animation */
+
+.arrow-wrapper {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: bounce 1s linear infinite, showArrowWrappers 3s ease;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    100% {
+        transform: translateX(-50%) translateY(30px);
+    }
+}
+
+@keyframes showArrowWrappers {
+
+    0%,
+    70% {
+        opacity: 0;
+    }
+
+    75% {
+        opacity: 1;
+    }
+}
+
+.arrow {
+    width: 0px;
+    height: 0px;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-top: 34px solid rgb(135, 135, 135);
+    opacity: 1;
+    animation: flashIn 3s linear infinite;
+}
+
+@keyframes flashIn {
+    5% {
+        opacity: 1;
+    }
+
+    13%,
+    100% {
+        opacity: 0;
+    }
+}
+
+
+.arrow.arrow1 {
+    position: absolute;
+    animation-delay: 0s;
+}
+
+.arrow.arrow2 {
+    position: absolute;
+    transform: translateY(25px);
+    animation-delay: 0.15s;
+}
+
+.arrow.arrow3 {
+    position: absolute;
+    transform: translateY(50px);
+    animation-delay: 0.3s;
+}
+
+
+.huomio {
+    grid-column: span 9;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto;
+    gap: 30px;
+    max-width: 100%;
+    align-items: center;
+}
+
+.huomioimg {
+    grid-column: span 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+}
+
+.huomioimg img {
+    max-width: 130%;
+}
+
+.huomiotext {
+    grid-column: span 5;
+    padding: 70px 20px;
+    padding-top: 30px;
+}
+
+.parallax-container {
+    grid-column: span 9;
+    background-image: linear-gradient(black, rgb(63, 63, 63), black);
+    background-attachment: fixed;
+    width: 100%;
+    height: 200px;
+    justify-content: center;
+    overflow: hidden;
+
+}
+
+.h1-parallax {
+    display: flex;
+    max-width: 100%;
+    justify-content: center;
+}
+
+.cards {
+    grid-column: span 9;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+}
+
+.cardandimg {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    max-width: 100%;
+    gap: 30px;
+    background: black;
+    background-size: 200%;
+}
+
+.imageforcard {
+    grid-column: span 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    background: black;
+    padding: 50px 0;
+    overflow: hidden;
+}
+
+.imageforcard.white {
+    background: white;
+    padding: 20px 0;
+}
+
+.imageforcard.grey {
+    background: black;
+}
+
+.imageforcard.darkgrey {
+    background: #0d0d0d;
+}
+.imageforcard.notoppadding{
+    padding-top: 0;
+}
+
+.imageforcard.video {
+    max-height: 75%;
+    margin-top: 30px;
+    justify-self: center;
+}
+
+.zoomelement,
+.rotateelement,
+.zoomrotateelement,
+.zoomtranslateelement {
+    max-width: 120%;
+    max-height: 120%;
+    transition: transform 0.3s ease-out;
+}
+
+
+.card {
+    grid-column: span 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: rgb(40, 40, 40);
+    padding: 20px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    max-width: 100%;
+    border-bottom: 8px solid rgb(30, 30, 30);
+    border-top: 8px solid rgb(30, 30, 30);
+}
+
+.contact {
+    grid-column: span 9;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    justify-content: center;
+    align-items: center;
+    margin: 100px 15px;
+    gap: 20px;
+}
+
+.contact .card {
+    grid-column: span 5;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+.contact .card h1 {
+    color: rgb(253, 253, 159);
+}
+
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.carousel {
+    grid-column: span 9;
+    position: relative;
+    background-color: black;
+    height: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 0;
+}
+
+.carousel-slide {
+    display: inline-block;
+    animation: 50s slide infinite linear;
+    height: 100%;
+}
+
+.carousel-slide img {
+    height: 100%;
+    
+}
+
+
+footer {
+    grid-column: span 9;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-align: left;
+    padding: 30px 10px;
+    background: linear-gradient(#000000, var(--darker));
+}
+
+footer ul{
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+
+footer p{
+    display: flex;
+    justify-content: center;
+    padding: 30px 0;
+    text-align: center;
+}
+
+
+@media screen and (min-width: 300px) {
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    header {
+        padding: 3%;
+    }
+
+    /* header .logo {
+        top: 3%;
+        max-height: 85%;
+        max-width: 82%;
+    } */
+
+    .huomioimg {
+        grid-column: span 5;
+    }
+
+    .huomiotext {
+        grid-column: span 5;
+    }
+
+    .contact h1 {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (min-width: 375px) {
+    h1 {
+        font-size: 3rem;
+    }
+
+    .welcome {
+        padding-top: 30px;
+        padding-bottom: 300px;
+    }
+}
+
+@media screen and (min-width: 590px) {
+    header .logo img {
+        max-width: 354px;
+
+    }
+}
+
+@media screen and (min-width: 760px) {
+
+    /* header{
+        padding-top: 50px;
+    }
+    header.scrolled{
+        padding-top: 20px;
+    }
+    header .logo{
+        max-width: 80%;
+        padding: 8%;
+    } */
+    .huomio {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin: 30px;
+        margin-bottom: 100px;
+
+    }
+
+    .huomioimg {
+        grid-column: span 2;
+    }
+
+    .huomiotext {
+        grid-column: span 1;
+        padding-bottom: 30px;
+    }
+
+    .cardandimg {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin: 100px 0;
+    }
+
+    .parallax-container {
+        height: 300px;
+    }
+
+    .card.kiinnostuitko {
+        grid-column: span 5;
+    }
+
+    .card.kiinnostuitko {
+        grid-column: span 3;
+    }
+
+    .card.yhteystiedot {
+        grid-column: span 2;
+    }
+}
+
+
+/* iphone 11 pro, X, XS, 8, SE 2020,  */
+@media screen and (max-width: 375px) {}
+
+/* iphone 12 pro max */
+/* @media screen and (max-width: 440px) {
+        nav {
+            max-width: 50%;
+            max-height: 100%;
+        }
+        nav ul {
+            display: flex;
+            align-items: center;
+        }
+        
+        
+        nav ul a {
+            display: block;
+            font-size: 1.7em;
+            margin: 0 30px;
+            padding: 14px 20px;
+            text-align: center;
+        }
+        
+    } */

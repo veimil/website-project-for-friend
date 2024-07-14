@@ -1,34 +1,32 @@
+<!-- This project uses AOS (Animate On Scroll), which is licensed under the MIT License. -->
+
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tean JD</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-
+    <title>TeanJD</title>
+    <link rel="stylesheet" href="styles-responsive.css">
     <script src="https://kit.fontawesome.com/ab80414cf6.js" crossorigin="anonymous"></script>
 
 </head>
 
 <body>
     <!-- navbar (outside the main grid) -->
-    <div class="navbar" id="navbar">
-        <nav>
-            <div class="social">
-                <a href="facebook.com"><i class="fa-brands fa-facebook-f" style="color: #ffffff;"></i></a>
-                <a href="instagram.com"><i class="fa-brands fa-instagram" style="color: #ffffff;"></i></a>
-                <a href="x.com"><i class="fa-brands fa-x-twitter" style="color: #ffffff;"></i></a>
-            </div>
-        </nav>
-        <div class="teanjd"><img src="img/teanjdtext.png" alt=""></div>
-    </div>
+    <header>
+        <div class="logo">
+            <img src="img/logotext.png" alt="teanjd logo">
+        </div>
+        <!-- <ul>
+            <li><a href="#"><i class="fa-solid fa-bars" style="color: #d8d8d8;"></i></a></li>
+        </ul> -->
+    </header>
 
     <!-- grid with 9 columns -->
     <main>
         <!-- welcome image and arrow animation -->
         <div class="welcome">
-            <img src="img/welcome.png" alt="">
+            <div class="welcomeimg"><img src="img/welcome.png" alt="main logo image"></div>
             <div class="arrow-wrapper">
                 <div class="arrow arrow1"></div>
                 <div class="arrow arrow2"></div>
@@ -39,26 +37,19 @@
         <!-- iso kuva ja esittelyteksti -->
         <div class="huomio">
             <div class=huomioimg>
-                <img src="img/2.jpg" alt="">
+                <img src="img/ring1.jpg" alt="ring image 1">
             </div>
             <div class="huomiotext">
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates aliquam adipisci dicta animi
                     dolores sapiente asperiores cum porro veritatis voluptatibus quibusdam praesentium facere, ea
-                    corrupti laboriosam quae culpa optio suscipit assumenda minus ipsum magnam laudantium voluptas
-                    tempore. Aspernatur hic reiciendis et enim adipisci recusandae dignissimos officia, nihil iure
-                    nemo
-                    temporibus aliquam autem alias voluptatibus id sequi facere voluptas dolorum, ex corporis,
-                    debitis
-                    odit ea fugit sapiente. Sint, autem. Pariatur rem veniam minima cum mollitia, blanditiis magni
-                    repellat ullam corporis esse quam doloribus sed deserunt quidem unde, soluta, iure quaerat
-                    voluptatibus aspernatur perspiciatis molestias? Natus cupiditate molestias ea voluptates dicta
-                    labore?</p>
+                    corrupti laboriosam quae culpa optio
+                </p>
             </div>
         </div>
 
         <!-- sormukset -teksti -->
-        <div class="sormukset">
-            <h1>Sormukset</h1>
+        <div class="parallax-container">
+            <h1 class="h1-parallax">SORMUKSET</h1>
         </div>
 
         <!-- tuote-esittelyt -->
@@ -66,157 +57,147 @@
 
             <!-- tuote 1 -->
             <div class="cardandimg">
-                <div class="card" data-aos="fade-right">
-                    <p>Card 1</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At id fugiat optio qui saepe
+
+                <div class="imageforcard white">
+                    <img class="zoomtranslateelement" src="img/ring3.jpeg" alt="ring image 2">
+                </div>
+
+                <div class="imageforcard video">
+                    <video class="videoelement" width="300" muted playsinline loop>
+                        <source src="img/sormus1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                <div class="card">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At id fugiat optio
+                        qui saepe
                         consequuntur
                         recusandae minus voluptates praesentium dolorem eaque quae aut inventore corrupti accusamus
-                        exercitationem mollitia, odio, quibusdam omnis magni. Vel natus quibusdam, tempora, quae impedit
-                        aspernatur quaerat sequi quam dicta quia fuga rem quidem illo aliquid doloribus a, officia sunt
-                        blanditiis voluptatum unde dolore placeat! Et reprehenderit repudiandae iusto deleniti soluta
-                        blanditiis non quasi laboriosam voluptates aliquam id sint, exercitationem tenetur
-                        necessitatibus
-                        repellat? Natus, nihil? Vitae porro itaque deleniti qui iusto ea perferendis repudiandae
-                        deserunt
-                        optio minus voluptas excepturi cum error laboriosam dolor atque, esse quia? Ea?</p>
+                    </p>
                 </div>
-                <div class="imageforcard">
-                    <img src="img/1.jpg" alt="" data-aos="fade-left">
-                </div>
+
             </div>
+
 
             <!-- tuote 2 -->
             <div class="cardandimg">
-                <div class="imageforcard">
-                    <img src="img/1.jpg" alt="" data-aos="fade-right">
+                <div class="imageforcard grey">
+                    <img class="zoomrotateelement" src="img/ring8.jpeg" alt="">
                 </div>
-                <div class="card" data-aos="fade-left">
-                    <p>Card 2</p>
+                <div class="imageforcard white video">
+                    <video class="videoelement" width="300" muted playsinline loop>
+                        <source src="img/gif4.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="card">
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum ducimus nulla impedit corporis
                         expedita delectus nihil aliquid eius reprehenderit cum. Reprehenderit earum ad id, animi
-                        repellendus
-                        facilis molestiae expedita sapiente ullam. Voluptate maiores, repellendus expedita aliquam
-                        inventore
-                        facere aliquid nostrum ex minima qui libero! Vel, voluptate quam. Vero ipsum aperiam ipsam
-                        reprehenderit corrupti repellat recusandae fugit atque alias iusto pariatur, facere cumque
-                        itaque
-                        architecto laboriosam ut, provident labore? Eos, eligendi at officia alias provident optio
-                        deserunt
-                        repellat in nihil cum ab quod minus asperiores corrupti tempora repudiandae quidem sit
-                        blanditiis.
-                        Explicabo est perferendis iure temporibus at dolores vel quia. Nisi!</p>
+                        us at dolores vel quia. Nisi!</p>
                 </div>
             </div>
 
             <!-- tuote 3 -->
             <div class="cardandimg">
-                <div class="card" data-aos="fade-right">
-                    <p>Card 3</p>
+                <div class="imageforcard darkgrey">
+                    <img class="zoomtranslateelement" src="img/ring12.jpeg" alt="">
+                </div>
+                <div class="card">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium magni in officiis ipsum quas
                         blanditiis dolorem nisi aspernatur fuga nihil similique mollitia a ut repudiandae placeat
                         reprehenderit ipsa, vero dicta. Dolorum assumenda vel aspernatur totam sunt voluptatibus saepe
-                        quaerat fuga deserunt fugiat hic quasi, impedit error pariatur quas sed est temporibus commodi
-                        voluptates qui possimus architecto illo magnam? Cum nulla dignissimos modi debitis commodi
-                        quisquam
-                        accusantium accusamus repellat, voluptate eligendi temporibus aut odit hic id aliquid laboriosam
-                        totam distinctio, illum pariatur veniam nisi nobis deserunt doloremque magni. Voluptates rerum
-                        cum
-                        maiores optio veritatis mollitia totam error quo! Laboriosam, unde at!</p>
-                </div>
-                <div class="imageforcard">
-                    <img src="img/1.jpg" alt="" data-aos="fade-left">
+                    </p>
                 </div>
             </div>
 
             <!-- tuote 4 -->
             <div class="cardandimg">
                 <div class="imageforcard">
-                    <img src="img/1.jpg" alt="" data-aos="fade-right">
+                    <img class="zoomrotateelement" src="img/ring11.jpeg" alt="">
                 </div>
-                <div class="card" data-aos="fade-left">
-                    <p>Card 4</p>
+                <div class="card">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora unde ea, cupiditate velit
                         excepturi
                         voluptas officia aliquam numquam sint fugiat, ratione eaque harum eius earum a doloribus. Eaque
-                        optio architecto labore hic ducimus ratione dicta! Itaque alias ratione delectus, necessitatibus
-                        fugiat eum voluptas dicta porro ipsum reprehenderit aspernatur error, nobis assumenda asperiores
-                        architecto iste consectetur quaerat quos similique nam sit. Repellendus doloremque, minima
-                        exercitationem beatae, natus ullam aut inventore voluptatum dolorem id possimus. Vel explicabo
-                        voluptatum modi possimus voluptatem eos nam rerum hic dignissimos accusamus, delectus inventore
-                        non
-                        error porro aliquam qui at tempora ex, labore perspiciatis voluptas facilis laboriosam.</p>
+                    </p>
                 </div>
             </div>
+
+            <div class="cardandimg">
+                <div class="imageforcard">
+                    <img class="rotateelement" src="img/ring15.jpeg" alt="">
+                </div>
+                <div class="card">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora unde ea, cupiditate velit
+                        excepturi
+                        voluptas officia aliquam numquam sint fugiat, ratione eaque harum eius earum a doloribus. Eaque
+                    </p>
+                </div>
+            </div>
+
+
         </div>
 
 
         <!-- yhteystiedot -->
-        <div class="card contactcard" data-aos="fade-up">
-            <h1>Kiinnostuitko?</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora unde ea, cupiditate velit
-                excepturi
-                voluptas officia aliquam numquam sint fugiat, ratione eaque harum eius earum a doloribus. Eaque
-                optio architecto labore hic ducimus ratione dicta! Itaque alias ratione delectus, necessitatibus
-                fugiat eum voluptas dicta porro ipsum reprehenderit aspernatur error, nobis assumenda asperiores
-                architecto iste consectetur quaerat quos similique nam sit. Repellendus doloremque, minima
-                exercitationem beatae, natus ullam aut inventore voluptatum dolorem id possimus. Vel explicabo
-                voluptatum modi possimus voluptatem eos nam rerum hic dignissimos accusamus, delectus inventore
-                non
-                error porro aliquam qui at tempora ex, labore perspiciatis voluptas facilis laboriosam.</p>
+        <div class="contact">
+            <div class="card kiinnostuitko">
+                <h1>Kiinnostuitko?</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora unde ea, cupiditate velit
+                    excepturi
+                    voluptas officia aliquam numquam sint fugiat, ratione eaque harum eius earum a doloribus. Eaque
+                    voluptas facilis laboriosam.</p>
+            </div>
+            <div class="card yhteystiedot" data-aos="fade-up">
+                <h1>Yhteystiedot</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet ab sed eius quidem quibusdam aperiam
+                    recusandae pariatur illum accusantium porro.</p>
+            </div>
         </div>
         <!-- kuvakaruselli -->
-        <!-- <div class="carousel">
-                <div class="carousel-slide">
-                    <img src="img/sormusedit5.png" alt="" data-tilt data-tilt-scale="1.15" data-tilt-max="5">
-                    <img src="img/sormusedit6.png" alt="" data-tilt data-tilt-scale="1.15" data-tilt-max="5">
-                    <img src="img/sormusedit7.png" alt="" data-tilt data-tilt-scale="1.15" data-tilt-max="5">
-                    <img src="img/2.jpg" alt="" data-tilt data-tilt-scale="1.15" data-tilt-max="5">
-                    <img src="img/3.png" alt="" data-tilt data-tilt-scale="1.15" data-tilt-max="5">
-                    <img src="img/4.png" alt="" data-tilt data-tilt-scale="1.15" data-tilt-max="5">
-                    <img src="img/5.png" alt="" data-tilt data-tilt-scale="1.15" data-tilt-max="5">
-                    <img src="img/6.png" alt="" data-tilt data-tilt-scale="1.15" data-tilt-max="5">
+        <div class="carousel">
 
-                </div>
-                <div class="carousel-slide">
-                    <img src="img/2.jpg" alt="" data-tilt data-tilt-scale="1.15" data-tilt-max="5">
-                    <img src="img/3.png" alt="" data-tilt data-tilt-scale="1.15" data-tilt-max="5">
-                    <img src="img/4.png" alt="" data-tilt data-tilt-scale="1.15" data-tilt-max="5">
-                    <img src="img/5.png" alt="" data-tilt data-tilt-scale="1.15" data-tilt-max="5">
-                    <img src="img/6.png" alt="" data-tilt data-tilt-scale="1.15" data-tilt-max="5">
-
-                </div>
-            </div> -->
-
-        <!-- <div class="imageforcard">
-            <img src="img/mies.webp" alt="" data-aos="fade-up">
-        </div>
+            <div class="carousel-slide">
+                <img src="img/3dprint1.jpeg" alt="">
+                <img src="img/ringmaking1.jpeg" alt="">
+                <img src="img/3dprint2.jpeg" alt="">
+                <img src="img/3dprint1.jpeg" alt="">
+                <img src="img/ringmaking1.jpeg" alt="">
+                <img src="img/3dprint2.jpeg" alt="">
+            </div>
+            <div class="carousel-slide">
+                <img src="img/3dprint1.jpeg" alt="">
+                <img src="img/ringmaking1.jpeg" alt="">
+                <img src="img/3dprint2.jpeg" alt="">
+                <img src="img/3dprint1.jpeg" alt="">
+                <img src="img/ringmaking1.jpeg" alt="">
+                <img src="img/3dprint2.jpeg" alt="">
+            </div>
+            
+            
         </div>
 
-        </div>
+        <footer>
 
+            <ul>
+                <li><a href="tiktok.com">Follow on TikTok</a></li>
+                <li><a href="pinterest.com">Follow on Pinterest</a></li>
+            </ul>
+            <p>&copy; 2024 Tean JD</p>
 
-
-
-        </div> -->
+        </footer>
     </main>
 
 
-    <footer>
-        <div class="footerinfo">
-            <ul>
-                <li>X</li>
-                <li>Facebook</li>
-                <li>Instagram</li>
-                <li>phone</li>
-            </ul>
-            <p>Copyright 2024 Tean JD</p>
-        </div>
-        <!-- <div class="bottomgrey"></div> -->
-    </footer>
-
-
+    <!-- This project uses Vanilla Tilt, which is licensed under the MIT License -->
+    <!-- Include Vanilla Tilt -->
     <!-- <script type="text/javascript" src="vanilla-tilt.js"></script> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+
+    <!-- This project uses AOS (Animate On Scroll), which is licensed under the MIT License. -->
+    <!-- Include AOS Library -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
 
     <script>
@@ -226,36 +207,204 @@
             mirror: true,
             once: true,
         });
-    </script>
+    </script> -->
 
 
     <script>
 
-        function changeBackgroundOnScroll() {
-            const body = document.body;
+        // function changeBackgroundOnScroll() {
+        //     const body = document.body;
 
-            if (window.scrollY > 2000) { // Change 100 to the scroll position where you want the color to change
-                body.style.backgroundColor = 'white'; // Change to desired color
-                body.classList.add('white-background');
-            } else {
-                body.style.backgroundColor = 'black'; // Initial background color
-                body.classList.remove('white-background');
-            }
+        //     if (window.scrollY > 2000) { // Change 100 to the scroll position where you want the color to change
+        //         body.style.backgroundColor = 'white'; // Change to desired color
+        //         body.classList.add('white-background');
+        //     } else {
+        //         body.style.backgroundColor = 'black'; // Initial background color
+        //         body.classList.remove('white-background');
+        //     }
+        // }
+        function header() {
+            const header = document.querySelector('header');
+            header.classList.toggle('scrolled', window.scrollY > 0);
         }
 
-        function showNavbar() {
-            const navbar = document.getElementById("navbar");
-            let scrollPosition = window.scrollY || document.documentElement.scrollTop;
-            if (scrollPosition > 3000) {
-                navbar.classList.add('show');
-            } else {
-                navbar.classList.remove('show');
-            }
+
+        function parallax() {
+            const h1Parallax = document.querySelector('.h1-parallax');
+            const parallaxContainer = document.querySelector('.parallax-container');
+            let initialOffset = 0;
+            if (window.innerWidth > 150) {
+                initialOffset = -h1Parallax.offsetHeight * 0.6;
+            };
+
+            h1Parallax.style.transform = `translateY(${initialOffset}px)`;
+
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            let speed = 0.1;
+            h1Parallax.style.transform = `translateY(${initialOffset + scrollTop * speed}px)`;
+        }
+
+        function zoomImages() {
+            const zoomElements = document.querySelectorAll('.zoomelement');
+            const maxZoom = 1.3; // Maximum scale value
+            const initialScale = 0.3;
+            const windowHeight = window.innerHeight;
+
+            zoomElements.forEach(zoomElement => {
+                const elementTop = zoomElement.offsetTop;
+                const scrollPosition = window.scrollY;
+                const elementHeight = zoomElement.offsetHeight;
+
+                let scaleValue = initialScale;
+                if (scrollPosition + windowHeight > elementTop && scrollPosition < elementTop + elementHeight) {
+                    const relativeScrollPosition = scrollPosition + windowHeight - elementTop;
+                    scaleValue = initialScale + (relativeScrollPosition / (elementHeight + windowHeight)) * (maxZoom - initialScale);
+                }
+                scaleValue = Math.min(maxZoom, Math.max(initialScale, scaleValue));
+
+                zoomElement.style.transform = `scale(${scaleValue})`;
+            });
+
+            // const scaleValue = 1 + (scrollPosition / windowHeight) * (maxZoom - 1);
+
+            // zoomElement.style.transform = `scale(${scaleValue})`;
+        }
+
+        function rotateImages() {
+            const rotateElements = document.querySelectorAll('.rotateelement');
+            const maxRotation = 45; // Maximum rotation angle in degrees
+            const windowHeight = window.innerHeight;
+
+            rotateElements.forEach(rotateElement => {
+                const elementTop = rotateElement.offsetTop;
+                const scrollPosition = window.scrollY;
+                const elementHeight = rotateElement.offsetHeight;
+
+                let rotationValue = 0; // Initial rotation value
+                if (scrollPosition + windowHeight > elementTop && scrollPosition < elementTop + elementHeight) {
+                    const relativeScrollPosition = scrollPosition + windowHeight - elementTop;
+                    rotationValue = (relativeScrollPosition / (elementHeight + windowHeight)) * maxRotation;
+                }
+
+                rotationValue = Math.min(maxRotation, Math.max(0, rotationValue));
+                rotateElement.style.transform = `rotate(${rotationValue}deg)`;
+            });
+        }
+        function zoomAndRotateImages() {
+            const elements = document.querySelectorAll('.zoomrotateelement');
+            const maxZoom = 1.4; // Maximum scale value
+            const initialScale = 0.3;
+            const maxRotation = 89; // Maximum rotation angle in degrees
+            const rotationSpeed = 0.15; // Rotation speed factor
+            const windowHeight = window.innerHeight;
+
+            elements.forEach(element => {
+                const elementTop = element.offsetTop;
+                const scrollPosition = window.scrollY;
+                const elementHeight = element.offsetHeight;
+
+                let scaleValue = initialScale;
+                let rotationValue = 0; // Initial rotation value
+
+                if (scrollPosition + windowHeight > elementTop && scrollPosition < elementTop + elementHeight) {
+                    const relativeScrollPosition = scrollPosition + windowHeight - elementTop;
+                    scaleValue = initialScale + (relativeScrollPosition / (elementHeight + windowHeight)) * (maxZoom - initialScale);
+
+                    // Calculate the rotation value based on scroll position
+                    rotationValue = relativeScrollPosition * rotationSpeed;
+                }
+
+                // Ensure the rotation value does not exceed 90 degrees
+                rotationValue = Math.min(maxRotation, Math.max(0, rotationValue));
+                scaleValue = Math.min(maxZoom, Math.max(initialScale, scaleValue));
+
+                element.style.transform = `scale(${scaleValue}) rotate(${rotationValue}deg)`;
+            });
+        }
+
+
+        function zoomAndTranslateImages() {
+            const zoomTranslateElements = document.querySelectorAll('.zoomtranslateelement');
+            const maxZoom = 1.2; // Maximum scale value
+            const initialScale = 0.3;
+            const maxTranslateY = 500; // Maximum translation value in pixels
+            const initialTranslateY = 200; // Initial Y translation value in pixels
+            const translateThreshold = 200; // Translation threshold value in pixels
+            const windowHeight = window.innerHeight;
+
+            zoomTranslateElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top + window.scrollY; // Get the top position of the element relative to the document
+                const scrollPosition = window.scrollY;
+                const elementHeight = element.offsetHeight;
+
+                let scaleValue = initialScale;
+                let translateYValue = initialTranslateY; // Start with the initial Y value
+
+                if (scrollPosition + windowHeight > elementTop && scrollPosition < elementTop + elementHeight) {
+                    const relativeScrollPosition = (scrollPosition + windowHeight - elementTop) / (elementHeight + windowHeight);
+                    scaleValue = initialScale + relativeScrollPosition * (maxZoom - initialScale);
+
+                    // Calculate translation value to move element up faster at the start
+                    const translation = (1 - Math.pow(1 - relativeScrollPosition, 2)) * maxTranslateY; // Inverse quadratic function for acceleration
+                    if (translation <= translateThreshold) {
+                        translateYValue = initialTranslateY - translation;
+                    } else {
+                        translateYValue = initialTranslateY - translateThreshold;
+                    }
+                }
+
+                scaleValue = Math.min(maxZoom, Math.max(initialScale, scaleValue));
+                translateYValue = Math.max(initialTranslateY - maxTranslateY, translateYValue); // Ensure translateYValue does not exceed the maximum
+
+                element.style.transform = `scale(${scaleValue}) translateY(${translateYValue}px)`;
+            });
         }
 
         window.addEventListener('scroll', function () {
-            changeBackgroundOnScroll();
-            showNavbar();
+            // changeBackgroundOnScroll();
+            header();
+            parallax();
+            zoomImages();
+            rotateImages();
+            zoomAndRotateImages();
+            zoomAndTranslateImages();
+        });
+
+        window.addEventListener('load', function () {
+
+            parallax();
+            zoomImages();
+            rotateImages();
+            zoomAndRotateImages();
+            zoomAndTranslateImages();
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const videos = document.querySelectorAll('.videoelement');
+
+            // Function to play the video
+            const playVideo = (entries, observer) => {
+                entries.forEach(entry => {
+                    const video = entry.target;
+                    if (entry.isIntersecting) {
+                        video.play();
+                    } else {
+                        video.pause(); // Optional: pause the video when it leaves the viewport
+                    }
+                });
+            };
+
+            // Create an Intersection Observer
+            const observer = new IntersectionObserver(playVideo, {
+                root: null, // Use the viewport as the root
+                threshold: 0.01 // Play the video when 1% of it is visible
+            });
+
+            // Observe each video element
+            videos.forEach(video => {
+                observer.observe(video);
+            });
         });
 
     </script>

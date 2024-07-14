@@ -1,5 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* variables */
+:root {
+  --primary: rgb(253, 253, 159);
+  --secondary: #ececec;
+  --semidark: #454545;
+  --darker: #333;
+}
+
+/* reset default browser styles */
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--secondary);
+}
 
 *,
 *::before,
@@ -10,12 +27,23 @@
 }
 
 body {
-
-  font-family: 'Anton', sans-serif;
-  font-size: 15px;
+  /* font-family: "Oswald", sans-serif; */
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-size: 1.2em;
+  color: var(--secondary);
+  text-align: left;
   background-color: black;
+  overflow-x: hidden;
   transition: background-color 0.3s;
   animation: fadeIn 2s ease-in-out, blurOut 2s ease-in-out forwards;
+}
+
+h1 {
+  font-family: "Poppins", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  color: var(--secondary);
 }
 
 @keyframes fadeIn {
@@ -38,25 +66,11 @@ body {
   }
 }
 
-.anton-regular {
-  font-family: "Anton", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.thin-font {
-  font-weight: 300;
-  letter-spacing: 0.05em;
-}
 
 ::selection {
+  
+  background-color: rgb(202, 180, 255);
   color: black;
-  background-color: white;
-}
-
-body.white-background ::selection {
-  color: white;
-  background-color: black;
 }
 
 
@@ -70,54 +84,56 @@ body.white-background ::selection {
   display: flex;
   position: fixed;
   justify-content: space-between;
+  max-height: 100px;
   top: -200px;
   left: 0;
   width: 100%;
-  background-color: black;
-  padding: 30px;
+  background: linear-gradient(#262626, black);
+  padding: 20px;
   padding-bottom: 5px;
   position: sticky;
-  transition: top 0.5s ease ;
+  transition: top 0.5s ease;
+  z-index: 10;
 }
 
 .navbar.show {
-  display: flex;
-  /* Display as flex when visible */
   top: 0;
 }
 
+nav {
+  max-width: 50%;
+  max-height: 100%;
+}
+
+
 .teanjd {
-  display: flex;
-  align-items: center;
-  justify-content: end;
+  display: block;
+  padding: 0;
+  margin: 0;
+
 }
 
 .teanjd img {
-  max-width: 40%;
+  max-height: 100%;
+  float: right;
+  max-width: 100%;
 
 }
 
-.social {
-  background-color: black;
+nav ul {
   display: flex;
   align-items: center;
-  justify-content: space-around;
 }
 
-.social a {
+
+nav ul a {
+  display: block;
+  font-size: 1.7em;
   margin: 0 30px;
-  padding: 10px 10px;
-
-}
-
-.social a {
-  font-size: 2em;
-  text-decoration: none;
-  color: white;
-  padding: 10px 20px;
+  padding: 14px 20px;
   text-align: center;
-
 }
+
 
 main {
   display: grid;
@@ -149,7 +165,7 @@ main {
 
 .arrow-wrapper {
   position: absolute;
-  top: 70%;
+  top: 60%;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -220,15 +236,19 @@ main {
 
 }
 
+
+
 .huomio {
   grid-column: span 9;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: center;
   grid-template-rows: auto;
+  margin: 40px;
 }
 
 .huomioimg {
-  grid-column: span 1;
+  grid-column: span 3;
   max-width: 100%;
 }
 
@@ -237,10 +257,15 @@ main {
 }
 
 .huomiotext {
-  grid-column: span 1;
-  text-align: left;
-  background-color: #333;
-  align-content: center;
+  grid-column: span 2;
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(#333, black);
+  border-radius: 30px;
+  padding: 60px;
 }
 
 /* nav a:hover {
@@ -274,7 +299,7 @@ nav .social a {
   font-size: 2em;
 } */
 
-@keyframes slide {
+/* @keyframes slide {
   from {
     transform: translateX(0);
   }
@@ -282,26 +307,30 @@ nav .social a {
   to {
     transform: translateX(-100%);
   }
-}
+} */
 
-.sormukset {
+.parallax-container {
+  background-attachment: fixed;
   grid-column: span 9;
-  margin: 200px auto;
-  font-size: 5em;
+  width: 100%;
+  padding: 200px;
+  font-size: 3em;
   justify-content: center;
-  color: white;
-  text-shadow:
-    -2px -2px 0 #000,
-    2px -2px 0 #000,
-    -2px 2px 0 #000,
-    2px 2px 0 #000;
+  overflow: hidden;
+
 }
 
+.h1-parallax {
+  display: flex;
+  max-width: 100%;
+  justify-content: center;
+}
 
 
 .cards {
   grid-column: span 9;
   display: grid;
+  text-align: center;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
   justify-content: center;
@@ -313,37 +342,30 @@ nav .social a {
   grid-column: span 1;
   display: grid;
   grid-template-columns: repeat(8, 1fr);
-  justify-content: center;
   align-items: center;
-  padding: 0 40px;
-  gap: 70px;
+  gap: 40px;
+  margin: 100px 0;
 }
 
-.cardandimg .card {
+.card {
+  grid-column: span 4;
   display: flex;
   flex-direction: column;
-  height: 400px;
-  grid-column: span 5;
+  height: auto;
   justify-content: center;
   align-items: center;
   background: radial-gradient(#333, black);
-  color: white;
-  margin: 200px 0;
   border-radius: 30px;
   padding: 60px;
-
 }
 
-.cardandimg .card.contactcard {
-  border: 2px solid white;
-}
 
-.cardandimg .card.contactcard h1 {
-  color: rgb(253, 253, 159);
-}
+.imageforcard {
+  grid-column: span 4;
+  display: flex;
+  max-width: 100%;
+  justify-content: center;
 
-.cardandimg .imageforcard {
-  grid-column: span 3;
 
 }
 
@@ -396,8 +418,26 @@ nav .social a {
   animation-play-state: paused;
 } */
 
+.contact {
+  grid-column: span 9;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 40px;
+  gap: 40px;
+}
 
-.infotext {
+.contact .card {
+  grid-column: span 1;
+  border: 2px solid white;
+}
+
+.contact .card h1 {
+  color: rgb(253, 253, 159);
+}
+
+/* .infotext {
   font-family: 'Roboto';
   padding: 40px 30px;
   grid-column: span 2;
@@ -419,28 +459,44 @@ nav .social a {
   width: 100%;
   max-width: 100%;
   height: auto;
-}
+} */
 
 footer {
 
-  background-color: #1b1b1b;
+  background: linear-gradient(#262626, black);
   margin-top: 15px;
 }
 
 .footerinfo {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  color: white;
   align-items: center;
   padding: 20px;
 }
 
-footer ul,
-p {
-
+footer ul {
   text-align: center;
 }
 
-footer ul {
-  list-style-type: none;
+
+/* iphone 12 mini */
+@media screen and (min-width: 300px){}
+  
+
+/* iphone 12, 12 pro, 13, 13 pro, 14, 14 pro, 15 */
+@media screen and (max-width: 400px){
+
+}
+
+/* iphone 11, XR, XS Max, 11 pro max,  */
+@media screen and (max-width: 420px){
+
+}
+/* iphone 11 pro, X, XS, 8, SE 2020,  */
+@media screen and (max-width: 380px){
+
+}
+/* iphone 12 pro max */
+@media screen and (max-width: 440px){
+
 }
