@@ -58,12 +58,12 @@
             <!-- tuote 1 -->
             <div class="cardandimg">
 
-                <div class="imageforcard white">
-                    <img class="zoomtranslateelement" src="img/ring3.jpeg" alt="ring image 2">
+                <div class="imageforcard">
+                    <img class="zoomtranslateelement scaledownwidth1" src="img/ring3.jpg" alt="ring image 2">
                 </div>
 
-                <div class="imageforcard video">
-                    <video class="videoelement" width="300" muted playsinline loop>
+                <div class="imageforcard video zoomtranslateelement">
+                    <video class="videoelement scaledownwidth2" width="400" muted playsinline loop>
                         <source src="img/sormus1.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
@@ -82,10 +82,10 @@
 
             <!-- tuote 2 -->
             <div class="cardandimg">
-                <div class="imageforcard grey">
+                <div class="imageforcard reduce-height">
                     <img class="zoomrotateelement" src="img/ring8.jpeg" alt="">
                 </div>
-                <div class="imageforcard white video">
+                <div class="imageforcard video">
                     <video class="videoelement" width="300" muted playsinline loop>
                         <source src="img/gif4.mp4" type="video/mp4">
                         Your browser does not support the video tag.
@@ -100,8 +100,11 @@
 
             <!-- tuote 3 -->
             <div class="cardandimg">
-                <div class="imageforcard darkgrey">
-                    <img class="zoomtranslateelement" src="img/ring12.jpeg" alt="">
+                <div class="imageforcard">
+                    <img class="zoomelement" src="img/ring12.png" alt="">
+                </div>
+                <div class="imageforcard">
+                    <img class="rotateelement" src="img/ring15.png" alt="">
                 </div>
                 <div class="card">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium magni in officiis ipsum quas
@@ -114,8 +117,18 @@
             <!-- tuote 4 -->
             <div class="cardandimg">
                 <div class="imageforcard">
-                    <img class="zoomrotateelement" src="img/ring11.jpeg" alt="">
+                    <video class="videoelement" width="300" muted playsinline loop>
+                        <source src="img/gif5.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
+                <div class="imageforcard reduce-height no-bottom-padding">
+                    <img class="rotateelement scaledownheight2" src="img/ring16.jpg" alt="">
+                </div>
+                <div class="imageforcard no-top-padding">
+                    <img class="zoomtranslateelement" src="img/ring11.jpg" alt="">
+                </div>
+
                 <div class="card">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora unde ea, cupiditate velit
                         excepturi
@@ -124,17 +137,6 @@
                 </div>
             </div>
 
-            <div class="cardandimg">
-                <div class="imageforcard">
-                    <img class="rotateelement" src="img/ring15.jpeg" alt="">
-                </div>
-                <div class="card">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora unde ea, cupiditate velit
-                        excepturi
-                        voluptas officia aliquam numquam sint fugiat, ratione eaque harum eius earum a doloribus. Eaque
-                    </p>
-                </div>
-            </div>
 
 
         </div>
@@ -156,58 +158,26 @@
             </div>
         </div>
         <!-- kuvakaruselli -->
-        <div class="carousel">
-
-            <div class="carousel-slide">
-                <img src="img/3dprint1.jpeg" alt="">
-                <img src="img/ringmaking1.jpeg" alt="">
-                <img src="img/3dprint2.jpeg" alt="">
-                <img src="img/3dprint1.jpeg" alt="">
-                <img src="img/ringmaking1.jpeg" alt="">
-                <img src="img/3dprint2.jpeg" alt="">
-            </div>
-            <div class="carousel-slide">
-                <img src="img/3dprint1.jpeg" alt="">
-                <img src="img/ringmaking1.jpeg" alt="">
-                <img src="img/3dprint2.jpeg" alt="">
-                <img src="img/3dprint1.jpeg" alt="">
-                <img src="img/ringmaking1.jpeg" alt="">
-                <img src="img/3dprint2.jpeg" alt="">
-            </div>
-            
-            
+        <div class="imggrid">
+            <img src="img/3dprint1.jpeg" alt="">
+            <img src="img/ringmaking1.jpeg" alt="">
+            <img src="img/3dprint2.jpeg" alt="">
         </div>
 
         <footer>
 
             <ul>
-                <li><a href="tiktok.com">Follow on TikTok</a></li>
-                <li><a href="pinterest.com">Follow on Pinterest</a></li>
+                <li><strong><a href="tiktok.com">Follow on TikTok</a></strong></li>
+                <li><strong><a href="pinterest.com">Follow on Pinterest</a></strong></li>
             </ul>
-            <p>&copy; 2024 Tean JD</p>
+            <strong>
+                <p>&copy; 2024 Tean JD</p>
+            </strong>
 
         </footer>
+        
     </main>
-
-
-    <!-- This project uses Vanilla Tilt, which is licensed under the MIT License -->
-    <!-- Include Vanilla Tilt -->
-    <!-- <script type="text/javascript" src="vanilla-tilt.js"></script> -->
-
-
-    <!-- This project uses AOS (Animate On Scroll), which is licensed under the MIT License. -->
-    <!-- Include AOS Library -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-
-
-    <script>
-        AOS.init({
-            delay: 200,
-            easing: 'ease',
-            mirror: true,
-            once: true,
-        });
-    </script> -->
+    
 
 
     <script>
@@ -247,7 +217,7 @@
 
         function zoomImages() {
             const zoomElements = document.querySelectorAll('.zoomelement');
-            const maxZoom = 1.3; // Maximum scale value
+            const maxZoom = 1.2; // Maximum scale value
             const initialScale = 0.3;
             const windowHeight = window.innerHeight;
 
@@ -266,10 +236,8 @@
                 zoomElement.style.transform = `scale(${scaleValue})`;
             });
 
-            // const scaleValue = 1 + (scrollPosition / windowHeight) * (maxZoom - 1);
-
-            // zoomElement.style.transform = `scale(${scaleValue})`;
         }
+
 
         function rotateImages() {
             const rotateElements = document.querySelectorAll('.rotateelement');
@@ -293,7 +261,7 @@
         }
         function zoomAndRotateImages() {
             const elements = document.querySelectorAll('.zoomrotateelement');
-            const maxZoom = 1.4; // Maximum scale value
+            const maxZoom = 1.2; // Maximum scale value
             const initialScale = 0.3;
             const maxRotation = 89; // Maximum rotation angle in degrees
             const rotationSpeed = 0.15; // Rotation speed factor
@@ -360,6 +328,9 @@
                 element.style.transform = `scale(${scaleValue}) translateY(${translateYValue}px)`;
             });
         }
+        
+
+
 
         window.addEventListener('scroll', function () {
             // changeBackgroundOnScroll();
@@ -369,6 +340,7 @@
             rotateImages();
             zoomAndRotateImages();
             zoomAndTranslateImages();
+            slowElements();
         });
 
         window.addEventListener('load', function () {
@@ -378,6 +350,8 @@
             rotateImages();
             zoomAndRotateImages();
             zoomAndTranslateImages();
+            translateImages();
+            slowElements();
         });
 
         document.addEventListener('DOMContentLoaded', function () {
