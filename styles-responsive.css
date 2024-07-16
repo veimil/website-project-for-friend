@@ -363,6 +363,7 @@ main {
     background-image: linear-gradient(rgb(40, 40, 40), black);
     border-radius: 15px;
     gap: 8px;
+    padding-top: 15px;
 }
 
 .contact .card h1 {
