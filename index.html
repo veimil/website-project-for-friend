@@ -147,7 +147,7 @@
                     voluptas facilis laboriosam.</p>
 
             </div>
-            <div class="card yhteystiedot" data-aos="fade-up">
+            <div class="card yhteystiedot">
                 <h1>Yhteystiedot</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet ab sed eius quidem quibusdam aperiam
                     recusandae pariatur illum accusantium porro.</p>
@@ -159,7 +159,7 @@
 
             </div>
         </div>
-        <!-- kuvakaruselli -->
+        <!-- images at the bottom of the page -->
         <div class="imggrid">
             <img src="img/3dprint1.jpeg" alt="">
             <img src="img/ringmaking1.jpeg" alt="">
@@ -190,11 +190,12 @@
         //         body.classList.remove('white-background');
         //     }
         // }
+
+
         function header() {
             const header = document.querySelector('header');
             header.classList.toggle('scrolled', window.scrollY > 0);
         }
-
 
         function parallax() {
             const h1Parallax = document.querySelector('.h1-parallax');
@@ -256,6 +257,8 @@
                 rotateElement.style.transform = `rotate(${rotationValue}deg)`;
             });
         }
+
+
         function zoomAndRotateImages() {
             const elements = document.querySelectorAll('.zoomrotateelement');
             const maxZoom = 1.2; // Maximum scale value
@@ -341,7 +344,7 @@
         });
 
         window.addEventListener('load', function () {
-
+            header();
             parallax();
             zoomImages();
             rotateImages();
