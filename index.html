@@ -10,26 +10,25 @@
 </head>
 
 <body>
-    <!-- navbar (outside the main grid) -->
-    <header>
-        <div class="logo">
+    <!-- main grid with 12 columns -->
+    <main>
+        <div class="headertext">
             <img src="img/logotext.png" alt="teanjd logo">
         </div>
-        <!-- <ul>
-            <li><a href="#"><i class="fa-solid fa-bars" style="color: #d8d8d8;"></i></a></li>
-        </ul> -->
-    </header>
 
-    <!-- grid with 9 columns -->
-    <main>
         <!-- welcome image and arrow animation -->
         <div class="welcome">
-            <div class="welcomeimg"><img src="img/welcome.png" alt="main logo image"></div>
+
+            <div class="welcomeimg">
+                <img src="img/welcome.png" alt="main logo image">
+            </div>
+
             <div class="arrow-wrapper">
                 <div class="arrow arrow1"></div>
                 <div class="arrow arrow2"></div>
                 <div class="arrow arrow3"></div>
             </div>
+
         </div>
 
         <!-- iso kuva ja esittelyteksti -->
@@ -39,8 +38,7 @@
             </div>
             <div class="huomiotext">
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates aliquam adipisci dicta animi
-                    dolores sapiente asperiores cum porro veritatis voluptatibus quibusdam praesentium facere, ea
-                    corrupti laboriosam quae culpa optio
+                    dolores sapiente asperiores cum porro veritatis
                 </p>
             </div>
         </div>
@@ -57,7 +55,7 @@
             <div class="cardandimg">
 
                 <div class="imageforcard">
-                    <img class="zoomtranslateelement scaledownwidth1" src="img/ring3.jpg" alt="ring image 2">
+                    <img class="zoomelement scaledownwidth1" src="img/ring3.jpg" alt="ring image 2">
                 </div>
 
                 <div class="imageforcard video zoomtranslateelement">
@@ -122,10 +120,10 @@
                         Your browser does not support the video tag.
                     </video>
                 </div>
-                <div class="imageforcard reduce-height no-bottom-padding">
-                    <img class="rotateelement scaledownheight2" src="img/ring16.jpg" alt="">
+                <div class="imageforcard reduce-height">
+                    <img class="rotateelement" src="img/ring16.jpg" alt="">
                 </div>
-                <div class="imageforcard no-top-padding">
+                <div class="imageforcard" id="vikasormus">
                     <img class="zoomtranslateelement" src="img/ring11.jpg" alt="">
                 </div>
 
@@ -152,10 +150,10 @@
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet ab sed eius quidem quibusdam aperiam
                     recusandae pariatur illum accusantium porro.</p>
 
-                    <ul class="socials">
-                        <li><strong><a href="#">TikTok</a></strong></li>
-                        <li><strong><a href="#">Pinterest</a></strong></li>
-                    </ul>
+                <ul class="socials">
+                    <li><strong><a href="#">TikTok</a></strong></li>
+                    <li><strong><a href="#">Pinterest</a></strong></li>
+                </ul>
 
             </div>
         </div>
@@ -191,10 +189,25 @@
         //     }
         // }
 
+        function updateMediaClasses() {
+            const mediaElements = document.querySelectorAll('.imageforcard img, .imageforcard video');
+            console.log(mediaElements);
+            const viewportWidth = window.innerWidth;
 
-        function header() {
-            const header = document.querySelector('header');
-            header.classList.toggle('scrolled', window.scrollY > 0);
+            mediaElements.forEach(element => {
+                if (viewportWidth >= 1200) {
+                    element.classList.add('large-screen');
+                    element.classList.remove('medium-screen', 'small-medium-screen');
+                } else if (viewportWidth >= 768) {
+                    element.classList.add('medium-screen');
+                    element.classList.remove('small-medium-screen', 'large-screen');
+                } else if (viewportWidth >= 600) {
+                    element.classList.add('small-medium-screen');
+                    element.classList.remove('large-screen', 'medium-screen');
+                } else {
+                    element.classList.remove('large-screen', 'medium-screen', 'small-medium-screen');
+                }
+            });
         }
 
         function parallax() {
@@ -215,8 +228,8 @@
 
         function zoomImages() {
             const zoomElements = document.querySelectorAll('.zoomelement');
-            const maxZoom = 1.2; // Maximum scale value
-            const initialScale = 0.3;
+            const maxZoom = 1.1; // Maximum scale value
+            const initialScale = 0.5;
             const windowHeight = window.innerHeight;
 
             zoomElements.forEach(zoomElement => {
@@ -262,7 +275,7 @@
         function zoomAndRotateImages() {
             const elements = document.querySelectorAll('.zoomrotateelement');
             const maxZoom = 1.2; // Maximum scale value
-            const initialScale = 0.3;
+            const initialScale = 0.4;
             const maxRotation = 89; // Maximum rotation angle in degrees
             const rotationSpeed = 0.15; // Rotation speed factor
             const windowHeight = window.innerHeight;
@@ -295,8 +308,8 @@
         function zoomAndTranslateImages() {
             const zoomTranslateElements = document.querySelectorAll('.zoomtranslateelement');
             const maxZoom = 1.2; // Maximum scale value
-            const initialScale = 0.3;
-            const maxTranslateY = 500; // Maximum translation value in pixels
+            const initialScale = 0.5;
+            const maxTranslateY = 400; // Maximum translation value in pixels
             const initialTranslateY = 200; // Initial Y translation value in pixels
             const translateThreshold = 200; // Translation threshold value in pixels
             const windowHeight = window.innerHeight;
@@ -334,7 +347,6 @@
 
         window.addEventListener('scroll', function () {
             // changeBackgroundOnScroll();
-            header();
             parallax();
             zoomImages();
             rotateImages();
@@ -344,7 +356,7 @@
         });
 
         window.addEventListener('load', function () {
-            header();
+            updateMediaClasses();
             parallax();
             zoomImages();
             rotateImages();
@@ -353,6 +365,8 @@
             translateImages();
             slowElements();
         });
+
+        window.addEventListener('resize', updateMediaClasses);
 
         document.addEventListener('DOMContentLoaded', function () {
             const videos = document.querySelectorAll('.videoelement');
