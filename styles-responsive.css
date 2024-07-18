@@ -199,33 +199,34 @@ main {
 
 /* first ringimage and text below */
 
-.huomio {
+.preview {
     grid-column: span 12;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: auto;
+    display: flex;
+    flex-direction: column;
     gap: 30px;
     max-width: 100%;
-    /* align-items: center; */
-    padding: 50px 0;
+    justify-content: center;
     align-items: center;
+    padding: 50px 0;
 }
 
-.huomioimg {
-    grid-column: span 5;
+.previewimg {
     display: flex;
     justify-content: center;
     align-items: center;
     max-width: 100%;
+    overflow: hidden;
+    margin: 30px auto;
 }
 
-.huomioimg img {
+.previewimg img {
     max-width: 130%;
 }
 
-.huomiotext {
-    grid-column: span 5;
-    padding: 50px 45px;
+.previewtext {
+    padding: 40px;
+    margin: 30px auto;
+    margin-bottom: 70px;
 }
 
 /* sormukset -teksti */
@@ -238,6 +239,7 @@ main {
     height: 200px;
     justify-content: center;
     overflow: hidden;
+    margin-bottom: 50px;
 }
 
 .h1-parallax {
@@ -246,77 +248,43 @@ main {
     justify-content: center;
 }
 
-/* container grid with 9 columns for rings and corresponding texts */
-.products {
-    grid-column: span 12;
-    display: grid;
-    grid-template-columns: repeat(9, 1fr);
-    max-width: 100%;
-}
+
+/* flex containers for rings */
 
 .ringcontainer {
-    grid-column: 2 / 9;
+    grid-column: 3 / 11;
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 100%;
-    padding: 100px auto;
-    margin: 70px 0;
+    width: 100%;
+    height: 100%;
+    padding: 60px 0;
+    margin: 20px auto;
     overflow: hidden;
-}
-
-.ringcontainer.notoppadding {
-    padding-top: 0;
-}
-
-.ringcontainer.reduce-height {
-    height: 400px;
-}
-
-.ringcontainer.reduce-height2 {
-    height: 600px;
 }
 
 .zoomelement,
 .rotateelement,
 .zoomrotateelement,
 .zoomtranslateelement {
-    max-width: 100%;
-    max-height: 100%;
-    transition: transform 0.5s ease-out;
+
+    transition: transform 0.3s ease-out;
 }
 
-.scaledownheight {
-    max-height: 70%;
-}
 
-used with first ring animation .scaledownwidth1 {
-    max-width: 75%;
-}
-
-.scaledownwidth2 {
-    max-width: 70%;
+.ringcontainer img {
+    max-width: 90%;
 }
 
 .videoelement {
-    max-width: 100%;
-    border-radius: 20px;
+    max-width: 80%;
+    border-radius: 30px;
+    margin-bottom: 20px;
 }
 
-.no-padding {
-    padding: 0;
-}
-
-.no-bottom-padding {
-    padding-bottom: 0;
-}
-
-.no-top-padding {
-    padding-top: 0;
-}
 
 .card {
-    grid-column: span 9;
+    grid-column: span 12;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -429,23 +397,13 @@ footer p {
     }
 
 
-    .huomio {
-        margin: 20px;
-        margin-bottom: 100px;
+    .preview {
+        flex-direction: row;
     }
 
-    .huomioimg {
-        grid-column: span 3;
-    }
-
-    .huomioimg img {
+    .previewimg img {
         max-width: 150%;
-    }
-
-    .huomiotext {
-        grid-column: span 2;
-        z-index: 10;
-        transform: translateY(20px);
+        margin-bottom: 100px;
     }
 
     .parallax-container {
@@ -454,33 +412,18 @@ footer p {
     }
 
     .ringcontainer {
-        grid-column: 4 / 7;
-        width: 100%;
-        /*tsekkaa tarvitaanko */
+        grid-column: 4 / 10;
     }
 
     .card {
-        grid-column: 2 / 9;
+        grid-column: 3 / 11;
         margin: 100px auto;
         padding: 50px;
-    }
-
-    .videoelement {
-        width: 450px;
-    }
-
-    .grow {
-        max-width: 130%;
-        max-height: 130%;
     }
 
     .contact {
         flex-direction: row;
         margin: 50px 35px;
-    }
-
-    .contact .card {
-        height: 80%;
     }
 
     .imggrid {
@@ -523,29 +466,24 @@ footer p {
         height: 300px;
     }
 
-    /* .products:first-child .ringcontainer{
-        grid-column: 3 / 5;
+    #firstring,
+    #thirdring,
+    #fifthring,
+    #seventhring {
+        grid-column: 2 / 6;
     }
 
-    .products:nth-child(2) .ringcontainer{
-        grid-column: 6 / 8;
-    } */
-
-    .ringcontainer {
-        grid-column: 4 / 7;
+    #secondring,
+    #fourthring,
+    #sixthring,
+    #eightring {
+        grid-column: 8 / 12;
     }
 
-    /* .ringcontainer img,
-    .ringcontainer video {
-        grid-column: 4 / 7;
-    } */
 
-    /* .card {
-        grid-column: span 4;
-    } */
-     .contact{
+    .contact {
         margin: 50px 60px;
-     }
+    }
 }
 
 @media screen and (min-width: 1200px) {
@@ -556,75 +494,25 @@ footer p {
     }
 
     .welcomeimg {
-        max-width: 50%;
+        max-width: 70%;
     }
 
     .arrow-wrapper {
         top: 60%;
     }
 
-    .huomioimg {
+    .previewimg {
         max-width: 80%;
         transform: translateX(60px);
-    }
-
-    .huomiotext {
-        transform: translateX(-50px);
-    }
-
-    .ringcontainer {
-        grid-column: 2 / 5;
-    }
-
-    .card {
-        grid-column: 6 / 9;
-    }
-
-    #firstring {
-        transform: translateX(70%);
-    }
-
-    #thirdring {
-        grid-column: 4 / 7
-    }
-
-    #fourthring {
-        transform: translateX(600px);
-    }
-
-    #secondcard {
-        transform: translateX(-600px);
-    }
-
-    #fifthring {
-        grid-column: 3 / 6;
-    }
-
-
-    #sixthring {
-        grid-column: 6 / 9;
-        grid-row: span 2;
-    }
-
-    #thirdcard{
-        grid-column: 2 / 5;
-        transform: translateY(100px);
-    }
-
-    #seventhring{
-        grid-column: 4 / 7;
-    }
-
-    #ninthring{
-        grid-column: 6 / 9;
     }
 
     .contact {
         margin-bottom: 100px;
     }
-    .contact{
+
+    .contact {
         margin: 50px 80px;
-     }
+    }
 
     footer {
         height: 100px;
@@ -640,6 +528,45 @@ footer p {
     .parallax-container {
         height: 350px;
     }
+/* 
+    #firstring,
+    #fourthring,
+    #seventhring {
+        grid-column: 3 / 6;
+    }
 
-   
+    #secondring,
+    #fifthring,
+    #eightring {
+        grid-column: 6 / 9;
+    } */
+
+    #thirdring,
+    #sixthring,
+    #ninthring {
+        grid-column: 9 / 12;
+    }
+
+    #fourthring {
+        grid-column: 6 / 9;
+    }
+
+    #fifthring {
+        grid-column: 2 / 5;
+    }
+
+    #sixthring {
+        grid-column: 6 / 9;
+    }
+
+    #seventhring {
+        grid-column: 2 / 5;
+    }
+
+    #eightring {
+        grid-column: 6 / 9;
+    }
+
+
+
 }
