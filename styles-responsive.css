@@ -247,36 +247,34 @@ main {
 }
 
 /* container grid with 9 columns for rings and corresponding texts */
-.cards {
+.products {
     grid-column: span 12;
     display: grid;
     grid-template-columns: repeat(9, 1fr);
     max-width: 100%;
 }
 
-.cardandimg {
-    grid-column: span 9;
-    margin: 30px auto;
-    max-width: 100%;
-    background: black;
-}
-
-.imageforcard {
+.ringcontainer {
+    grid-column: 2 / 9;
     display: flex;
     justify-content: center;
     align-items: center;
     max-width: 100%;
-    padding: 50px auto;
-    margin: 120px 0;
+    padding: 100px auto;
+    margin: 70px 0;
     overflow: hidden;
 }
 
-.imageforcard.notoppadding {
+.ringcontainer.notoppadding {
     padding-top: 0;
 }
 
-.imageforcard.reduce-height {
+.ringcontainer.reduce-height {
     height: 400px;
+}
+
+.ringcontainer.reduce-height2 {
+    height: 600px;
 }
 
 .zoomelement,
@@ -292,13 +290,12 @@ main {
     max-height: 70%;
 }
 
-
-.scaledownwidth1 {
-    max-width: 82%;
+used with first ring animation .scaledownwidth1 {
+    max-width: 75%;
 }
 
 .scaledownwidth2 {
-    max-width: 80%;
+    max-width: 70%;
 }
 
 .videoelement {
@@ -319,11 +316,11 @@ main {
 }
 
 .card {
+    grid-column: span 9;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* background: rgb(30, 30, 30); */
     background-image: linear-gradient(140deg, black, rgb(35, 35, 35), black);
     padding: 30px 20px;
     margin: 0 auto;
@@ -456,23 +453,25 @@ footer p {
         margin-bottom: 100px;
     }
 
-
-    .cardandimg:first-child .imageforcard.video {
-        transform: translateY(30px);
-    }
-
-    .cardandimg {
-        grid-column: 2 / 9;
+    .ringcontainer {
+        grid-column: 4 / 7;
         width: 100%;
+        /*tsekkaa tarvitaanko */
     }
 
     .card {
+        grid-column: 2 / 9;
         margin: 100px auto;
         padding: 50px;
     }
 
     .videoelement {
         width: 450px;
+    }
+
+    .grow {
+        max-width: 130%;
+        max-height: 130%;
     }
 
     .contact {
@@ -495,19 +494,17 @@ footer p {
         max-width: 33.4%;
     }
 
-    #vikasormus {
-        grid-column: 2 / 4;
-    }
-    footer{
+    footer {
         padding: 50px;
         background-image: linear-gradient(rgb(51, 51, 51), black);
 
     }
 
-
 }
 
+
 @media screen and (min-width: 1000px) {
+
 
     .headertext img {
         max-width: 50%;
@@ -516,51 +513,133 @@ footer p {
     .welcomeimg {
         max-width: 75%;
     }
-    .parallax-container{
+
+    .arrow {
+        border-top: 34px solid white;
+
+    }
+
+    .parallax-container {
         height: 300px;
     }
 
-    .cardandimg {
-        grid-column: span 9;
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
+    /* .products:first-child .ringcontainer{
+        grid-column: 3 / 5;
     }
 
-    .imageforcard {
-        grid-column: span 2;
+    .products:nth-child(2) .ringcontainer{
+        grid-column: 6 / 8;
+    } */
+
+    .ringcontainer {
+        grid-column: 4 / 7;
     }
 
-    .card {
+    /* .ringcontainer img,
+    .ringcontainer video {
+        grid-column: 4 / 7;
+    } */
+
+    /* .card {
         grid-column: span 4;
-    }
+    } */
+     .contact{
+        margin: 50px 60px;
+     }
 }
 
 @media screen and (min-width: 1200px) {
 
-    .headertext img{
+
+    .headertext img {
         max-width: 40%;
     }
-    .welcomeimg{
+
+    .welcomeimg {
         max-width: 50%;
     }
-    .arrow-wrapper{
+
+    .arrow-wrapper {
         top: 60%;
     }
-    .huomioimg{
+
+    .huomioimg {
         max-width: 80%;
         transform: translateX(60px);
     }
-    .huomiotext{
+
+    .huomiotext {
         transform: translateX(-50px);
+    }
+
+    .ringcontainer {
+        grid-column: 2 / 5;
+    }
+
+    .card {
+        grid-column: 6 / 9;
+    }
+
+    #firstring {
+        transform: translateX(70%);
+    }
+
+    #thirdring {
+        grid-column: 4 / 7
+    }
+
+    #fourthring {
+        transform: translateX(600px);
+    }
+
+    #secondcard {
+        transform: translateX(-600px);
+    }
+
+    #fifthring {
+        grid-column: 3 / 6;
+    }
+
+
+    #sixthring {
+        grid-column: 6 / 9;
+        grid-row: span 2;
+    }
+
+    #thirdcard{
+        grid-column: 2 / 5;
+        transform: translateY(100px);
+    }
+
+    #seventhring{
+        grid-column: 4 / 7;
+    }
+
+    #ninthring{
+        grid-column: 6 / 9;
+    }
+
+    .contact {
+        margin-bottom: 100px;
+    }
+    .contact{
+        margin: 50px 80px;
+     }
+
+    footer {
+        height: 100px;
     }
 }
 
 @media screen and (min-width: 1390px) {
-    h1{
+
+    h1 {
         font-size: 8rem;
     }
-    /* .footer{
 
-    } */
+    .parallax-container {
+        height: 350px;
+    }
+
+   
 }
-

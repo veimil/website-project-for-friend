@@ -49,87 +49,78 @@
         </div>
 
         <!-- tuote-esittelyt -->
-        <div class="cards">
+        <div class="products">
 
             <!-- tuote 1 -->
-            <div class="cardandimg">
 
-                <div class="imageforcard">
-                    <img class="zoomelement scaledownwidth1" src="img/ring3.jpg" alt="ring image 2">
-                </div>
+            <div class="ringcontainer" id="firstring">
+                <img class="zoomtranslateelement scaledownwidth1" src="img/ring3.jpg" alt="ring image 2">
+            </div>
 
-                <div class="imageforcard video zoomtranslateelement">
-                    <video class="videoelement scaledownwidth2" width="400" muted playsinline loop>
-                        <source src="img/sormus1.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
+            <div class="ringcontainer video zoomelement" id="secondring">
+                <video class="videoelement" width="400" muted playsinline loop>
+                    <source src="img/sormus1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
 
-                <div class="card">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At id fugiat optio
-                        qui saepe
-                        consequuntur
-                        recusandae minus voluptates praesentium dolorem eaque quae aut inventore corrupti accusamus
-                    </p>
-                </div>
-
+            <div class="card" id="firstcard">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At id fugiat optio
+                    qui saepe
+                    consequuntur
+                    recusandae minus voluptates praesentium dolorem eaque quae aut inventore corrupti accusamus
+                </p>
             </div>
 
 
             <!-- tuote 2 -->
-            <div class="cardandimg">
-                <div class="imageforcard reduce-height">
-                    <img class="zoomrotateelement" src="img/ring8.jpeg" alt="">
-                </div>
-                <div class="imageforcard video">
-                    <video class="videoelement" width="300" muted playsinline loop>
-                        <source src="img/gif4.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                <div class="card">
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum ducimus nulla impedit corporis
-                        expedita delectus nihil aliquid eius reprehenderit cum. Reprehenderit earum ad id, animi
-                        us at dolores vel quia. Nisi!</p>
-                </div>
+
+            <div class="ringcontainer reduce-height" id="thirdring">
+                <img class="zoomrotateelement" src="img/ring8.jpeg" alt="">
+            </div>
+            <div class="ringcontainer video" id="fourthring">
+                <video class="videoelement" width="300" muted playsinline loop>
+                    <source src="img/gif4.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="card" id="secondcard">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum ducimus nulla impedit corporis
+                    expedita delectus nihil aliquid eius reprehenderit cum. Reprehenderit earum ad id, animi
+                    us at dolores vel quia. Nisi!</p>
             </div>
 
 
             <!-- tuote 3 -->
-            <div class="cardandimg">
-                <div class="imageforcard">
-                    <img class="zoomelement" src="img/ring12.png" alt="">
-                </div>
-                <div class="imageforcard">
-                    <img class="rotateelement scaledownwidth1" src="img/ring15.png" alt="">
-                </div>
-                <div class="card">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium magni in officiis ipsum quas
-                        blanditiis dolorem nisi aspernatur fuga nihil similique mollitia a ut repudiandae placeat
-                        reprehenderit ipsa, vero dicta. Dolorum assumenda vel aspernatur totam sunt voluptatibus saepe
-                    </p>
-                </div>
+
+            <div class="ringcontainer" id="fifthring">
+                <img class="zoomelement" src="img/ring12.png" alt="">
+            </div>
+            <div class="ringcontainer" id="sixthring"> 
+                <img class="rotateelement scaledownwidth1" src="img/ring15.png" alt="">
+            </div>
+            <div class="card" id="thirdcard">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium magni in officiis ipsum quas
+                    blanditiis dolorem nisi aspernatur fuga nihil similique mollitia a ut repudiandae placeat
+                    reprehenderit ipsa, vero dicta. Dolorum assumenda vel aspernatur totam sunt voluptatibus saepe
+                </p>
             </div>
 
 
             <!-- tuote 4 -->
-            <div class="cardandimg">
-                <div class="imageforcard">
-                    <video class="videoelement" width="300" muted playsinline loop>
-                        <source src="img/gif5.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                <div class="imageforcard reduce-height">
-                    <img class="rotateelement" src="img/ring16.jpg" alt="">
-                </div>
-                <div class="imageforcard" id="vikasormus">
-                    <img class="zoomtranslateelement" src="img/ring11.jpg" alt="">
-                </div>
 
-
+            <div class="ringcontainer" id="seventhring">
+                <video class="videoelement" width="300" muted playsinline loop>
+                    <source src="img/gif5.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </div>
-
+            <div class="ringcontainer reduce-height" id="eightring">
+                <img class="rotateelement grow" src="img/ring16.jpg" alt="">
+            </div>
+            <div class="ringcontainer reduce-height2" id="ninthring">
+                <img class="zoomrotateelement" src="img/ring11.jpg" alt="">
+            </div>
 
 
         </div>
@@ -157,6 +148,8 @@
 
             </div>
         </div>
+
+
         <!-- images at the bottom of the page -->
         <div class="imggrid">
             <img src="img/3dprint1.jpeg" alt="">
@@ -164,11 +157,11 @@
             <img src="img/3dprint2.jpeg" alt="">
         </div>
 
+
         <footer>
             <strong>
                 <p>&copy; 2024 Tean JD</p>
             </strong>
-
         </footer>
 
     </main>
@@ -190,7 +183,7 @@
         // }
 
         function updateMediaClasses() {
-            const mediaElements = document.querySelectorAll('.imageforcard img, .imageforcard video');
+            const mediaElements = document.querySelectorAll('.ringcontainer img, .ringcontainer video');
             console.log(mediaElements);
             const viewportWidth = window.innerWidth;
 
