@@ -100,7 +100,7 @@ main {
 
 
 .headertext img {
-    max-width: 80%;
+    max-width: 90%;
 }
 
 
@@ -265,9 +265,10 @@ main {
 .zoomelement,
 .rotateelement,
 .zoomrotateelement,
-.zoomtranslateelement {
+.zoomtranslateelement,
+.translateelement {
 
-    transition: transform 0.3s ease-out;
+    transition: transform 0.4s ease-out;
 }
 
 
