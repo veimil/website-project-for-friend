@@ -33,7 +33,6 @@
 
 
         <!-- flex container for preview img and text -->
-         
         <div class="preview">
             <div class=previewimg>
                 <img src="img/previewimg.png" alt="ring image 1">
@@ -120,32 +119,32 @@
             <img class="rotateelement" src="img/ring16.jpg" alt="">
         </div>
         <div class="ringcontainer" id="ninthring">
-            <img class="zoomelement" src="img/ring11.jpg" alt="">
+            <img class="translateelement" src="img/ring11.jpg" alt="">
         </div>
 
 
 
 
         <!-- yhteystiedot -->
-        <div class="contact">
-            <div class="card kiinnostuitko">
-                <h1>Kiinnostuitko?</h1>
+        <div class="contact card">
+            <div class="kiinnostuitko">
+                <h2><strong>Kiinnostuitko?</strong></h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora unde ea, cupiditate velit
                     excepturi
                     voluptas officia aliquam numquam sint fugiat, ratione eaque harum eius earum a doloribus. Eaque
                     voluptas facilis laboriosam.</p>
-
             </div>
-            <div class="card yhteystiedot">
-                <h1>Yhteystiedot</h1>
+            <div class="yhteystiedot">
+                <h2><strong>Yhteystiedot</strong></h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet ab sed eius quidem quibusdam aperiam
                     recusandae pariatur illum accusantium porro.</p>
-
+            </div>
+            <div class="followus">
+                <h2><strong>Follow us:</strong></h2>
                 <ul class="socials">
                     <li><strong><a href="#">TikTok</a></strong></li>
                     <li><strong><a href="#">Pinterest</a></strong></li>
                 </ul>
-
             </div>
         </div>
 
@@ -162,6 +161,9 @@
             <strong>
                 <p>&copy; 2024 Tean JD</p>
             </strong>
+            <div class="footerimage">
+                <img src="img/footerimage.jpg" alt="">
+            </div>
         </footer>
 
     </main>
@@ -340,11 +342,40 @@
             });
         }
 
+        function translateElements() {
+            const translateElements = document.querySelectorAll('.translateelement');
+            const maxTranslateY = 100; // Maximum translation value in pixels
+            const initialTranslateY = 50; // Initial Y translation value in pixels
+            const windowHeight = window.innerHeight;
+
+            translateElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top + window.scrollY; // Get the top position of the element relative to the document
+                const scrollPosition = window.scrollY;
+                const elementHeight = element.offsetHeight;
+
+                let translateYValue = initialTranslateY; // Start with the initial Y value
+
+                if (scrollPosition + windowHeight > elementTop && scrollPosition < elementTop + elementHeight) {
+                    const relativeScrollPosition = (scrollPosition + windowHeight - elementTop) / (elementHeight + windowHeight);
+
+                    // Calculate translation value with a smoother function
+                    const translation = relativeScrollPosition * maxTranslateY; // Linear function for smoother translation
+                    translateYValue = initialTranslateY - translation;
+                }
+
+                translateYValue = Math.max(initialTranslateY - maxTranslateY, translateYValue); // Ensure translateYValue does not exceed the maximum
+
+                element.style.transform = `translateY(${translateYValue}px)`;
+                element.style.transition = 'transform 0.3s ease-out'; // Add smooth transition
+            });
+        }
+
 
 
 
         window.addEventListener('scroll', function () {
             // changeBackgroundOnScroll();
+            translateElements();
             parallax();
             zoomImages();
             rotateImages();
@@ -354,6 +385,7 @@
         });
 
         window.addEventListener('load', function () {
+            translateElements();
             updateMediaClasses();
             parallax();
             zoomImages();

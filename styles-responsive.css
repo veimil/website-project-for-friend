@@ -203,7 +203,6 @@ main {
     grid-column: span 12;
     display: flex;
     flex-direction: column;
-    gap: 30px;
     max-width: 100%;
     justify-content: center;
     align-items: center;
@@ -220,7 +219,7 @@ main {
 }
 
 .previewimg img {
-    max-width: 130%;
+    max-width: 110%;
 }
 
 .previewtext {
@@ -278,7 +277,7 @@ main {
 
 .videoelement {
     max-width: 80%;
-    border-radius: 30px;
+    border-radius: 40px;
     margin-bottom: 20px;
 }
 
@@ -290,52 +289,46 @@ main {
     justify-content: center;
     align-items: center;
     background-image: linear-gradient(140deg, black, rgb(35, 35, 35), black);
-    padding: 30px 20px;
+    padding: 20px 30px;
     margin: 0 auto;
     max-width: 87%;
-    border-radius: 15px;
+    border-radius: 30px;
+    min-width: fit-content;
 }
 
 .contact {
-    grid-column: span 12;
+    gap: 40px;
+    justify-content: space-between;
+    margin: 50px auto;
+}
+
+
+.contact h2 {
+
+    color: var(--secondary);
+    width: auto;
+    font-size: 1.5em;
+    text-align: left;
+}
+
+.kiinnostuitko,
+.yhteystiedot,
+.followus {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    margin: 50px auto;
-    margin-top: 30px;
-}
-
-.contact .card {
-    grid-column: span 5;
-    border: 2px solid grey;
-    background-image: linear-gradient(rgb(40, 40, 40), black);
-    border-radius: 15px;
+    width: 100%;
     gap: 8px;
-    padding-top: 15px;
 }
 
-.contact .card h1 {
-    color: rgb(253, 253, 159);
-    width: 100%;
-    text-align: left;
-
-}
-
-.contact .socials {
+.followus .socials {
     display: flex;
-    border-radius: 10px;
-    margin-top: 20px;
     gap: 20px;
-    width: 100%;
-    text-align: left;
 }
 
-.contact .socials li {
+.socials li {
     padding: 10px 20px;
     background-color: #454545;
-    border-radius: 10px;
+    border-radius: 15px;
 }
 
 
@@ -357,13 +350,21 @@ main {
 footer {
     grid-column: span 12;
     display: flex;
-    flex-direction: column;
     align-items: center;
     text-align: center;
-    justify-content: space-around;
+    justify-content: center;
     padding: 30px 10px;
-    background: black;
+    background-color: #201e20;
 }
+
+.footerimage {
+    margin-left: 5px;
+}
+
+.footerimage img {
+    max-width: 20px;
+}
+
 
 footer p {
     display: flex;
@@ -373,27 +374,33 @@ footer p {
 }
 
 
+
+
+/* media queries */ 
+
+
 @media screen and (min-width: 300px) {
 
     h1 {
-        font-size: 3.2rem;
+        font-size: 3.2em;
     }
 
-    .contact h1 {
-        font-size: 2rem;
-    }
 }
+
+
 
 @media screen and (min-width: 500px) {
     h1 {
-        font-size: 4.5rem;
+        font-size: 4.5em;
     }
 }
+
+
 
 @media screen and (min-width: 750px) {
 
     h1 {
-        font-size: 7rem;
+        font-size: 7em;
     }
 
 
@@ -418,13 +425,9 @@ footer p {
     .card {
         grid-column: 3 / 11;
         margin: 100px auto;
-        padding: 50px;
+        padding: 30px 45px;
     }
 
-    .contact {
-        flex-direction: row;
-        margin: 50px 35px;
-    }
 
     .imggrid {
         flex-direction: row;
@@ -439,11 +442,9 @@ footer p {
 
     footer {
         padding: 50px;
-        background-image: linear-gradient(rgb(51, 51, 51), black);
-
     }
-
 }
+
 
 
 @media screen and (min-width: 1000px) {
@@ -480,14 +481,30 @@ footer p {
         grid-column: 8 / 12;
     }
 
+    #ninthring {
+        grid-column: 5 / 9;
+    }
 
     .contact {
-        margin: 50px 60px;
+        grid-column: 1 / 13;
+        flex-direction: row;
+        align-items: baseline;
+        justify-content: center;
+
+    }
+
+    .contact {
+        gap: 60px;
     }
 }
 
+
+
 @media screen and (min-width: 1200px) {
 
+    h1 {
+        font-size: 8em;
+    }
 
     .headertext img {
         max-width: 40%;
@@ -498,65 +515,62 @@ footer p {
     }
 
     .arrow-wrapper {
-        top: 60%;
+        top: 90%;
     }
 
-    .previewimg {
-        max-width: 80%;
-        transform: translateX(60px);
-    }
-
-    .contact {
-        margin-bottom: 100px;
+    .previewimg img {
+        max-width: 120%;
     }
 
     .contact {
-        margin: 50px 80px;
+        margin-bottom: 150px;
+    }
+
+    .contact div {
+        margin-left: 50px;
     }
 
     footer {
-        height: 100px;
+        height: 150px;
     }
+
 }
+
+
 
 @media screen and (min-width: 1390px) {
 
-    h1 {
-        font-size: 8rem;
+    .welcomeimg {
+        max-width: 60%;
     }
+
+    .previewimg {
+        transform: translateX(50px);
+    }
+
+    .previewtext {
+        transform: translateX(-70px);
+    }
+
+    .previewimg img {
+        max-width: 100%;
+    }
+
 
     .parallax-container {
         height: 350px;
     }
-/* 
+
     #firstring,
-    #fourthring,
-    #seventhring {
+    #thirdring,
+    #fifthring {
         grid-column: 3 / 6;
     }
 
     #secondring,
-    #fifthring,
-    #eightring {
-        grid-column: 6 / 9;
-    } */
-
-    #thirdring,
-    #sixthring,
-    #ninthring {
-        grid-column: 9 / 12;
-    }
-
-    #fourthring {
-        grid-column: 6 / 9;
-    }
-
-    #fifthring {
-        grid-column: 2 / 5;
-    }
-
+    #fourthring,
     #sixthring {
-        grid-column: 6 / 9;
+        grid-column: 8 / 11;
     }
 
     #seventhring {
@@ -564,9 +578,31 @@ footer p {
     }
 
     #eightring {
-        grid-column: 6 / 9;
+        grid-column: 5 / 9;
+        max-width: 70%;
+    }
+
+    #ninthring {
+        grid-column: 9 / 12;
+    }
+
+    .contact div {
+        margin-left: 100px;
     }
 
 
+}
+
+
+
+@media screen and (min-width: 2000px) {
+
+    .welcomeimg {
+        max-width: 50%;
+    }
+
+    .parallax-container {
+        height: 450px;
+    }
 
 }
