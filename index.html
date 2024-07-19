@@ -57,7 +57,7 @@
             <img class="zoomelement" src="img/ring3.jpg" alt="ring image 2">
         </div>
 
-        <div class="ringcontainer video zoomtranslateelement" id="secondring">
+        <div class="ringcontainer video translateelement" id="secondring">
             <video class="videoelement" width="400" muted playsinline loop>
                 <source src="img/sormus1.mp4" type="video/mp4">
                 Your browser does not support the video tag.
@@ -224,7 +224,7 @@
         function zoomImages() {
             const zoomElements = document.querySelectorAll('.zoomelement');
             const maxZoom = 1.2; // Maximum scale value
-            const initialScale = 0.5;
+            const initialScale = 0.7;
             const windowHeight = window.innerHeight;
 
             zoomElements.forEach(zoomElement => {

@@ -281,6 +281,10 @@ main {
     margin-bottom: 20px;
 }
 
+#secondring{
+    padding-top: 0;
+}
+
 
 .card {
     grid-column: span 12;
