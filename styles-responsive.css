@@ -261,12 +261,12 @@ main {
 }
 
 .zoomelement,
-.rotateelement,
-.zoomrotateelement,
 .zoomtranslateelement,
+.zoomrotateelement,
+.rotateelement,
 .translateelement {
 
-    transition: transform 0.5s ease-out;
+    transition: transform 0.3s ease-out;
 }
 
 
