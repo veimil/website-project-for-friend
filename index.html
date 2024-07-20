@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TeanJD</title>
     <link rel="stylesheet" href="styles-responsive.css">
-    <script src="https://kit.fontawesome.com/ab80414cf6.js" crossorigin="anonymous"></script>
-
 </head>
 
 <body>
@@ -35,7 +33,7 @@
         <!-- flex container for preview img and text -->
         <div class="preview">
             <div class=previewimg>
-                <img src="img/previewimg.png" alt="ring image 1">
+                <img src="img/preview.png" alt="teanjd ring sormus">
             </div>
             <div class="previewtext">
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates aliquam adipisci dicta animi
@@ -54,12 +52,12 @@
         <!-- osio 1 -->
 
         <div class="ringcontainer" id="firstring">
-            <img class="zoomelement" src="img/ring3.jpg" alt="ring image 2">
+            <img class="zoomelement" src="img/ring2.jpg" alt="teanjd ring sormus">
         </div>
 
-        <div class="ringcontainer video translateelement" id="secondring">
+        <div class="ringcontainer translateelement" id="secondring">
             <video class="videoelement" width="400" muted playsinline loop poster="img/videoposter1.png">
-                <source src="img/sormus1.mp4" type="video/mp4">
+                <source src="img/gif1.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </div>
@@ -76,11 +74,11 @@
         <!-- osio 2 -->
 
         <div class="ringcontainer" id="thirdring">
-            <img class="zoomrotateelement" src="img/ring8.jpg" alt="">
+            <img class="zoomrotateelement" src="img/ring3.jpg" alt="teanjd ring sormus">
         </div>
-        <div class="ringcontainer video" id="fourthring">
+        <div class="ringcontainer translateelement" id="fourthring">
             <video class="videoelement" width="400" muted playsinline loop poster="img/videoposter2.png">
-                <source src="img/gif4.mp4" type="video/mp4">
+                <source src="img/gif2.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </div>
@@ -94,10 +92,10 @@
         <!-- osio 3 -->
 
         <div class="ringcontainer" id="fifthring">
-            <img class="zoomelement" src="img/ring12.png" alt="">
+            <img class="zoomelement" src="img/ring4.png" alt="teanjd ring sormus">
         </div>
         <div class="ringcontainer" id="sixthring">
-            <img class="rotateelement" src="img/ring15.png" alt="">
+            <img class="rotateelement" src="img/ring5.png" alt="teanjd ring sormus">
         </div>
         <div class="card" id="thirdcard">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium magni in officiis ipsum quas
@@ -109,17 +107,17 @@
 
         <!-- osio 4 -->
 
-        <div class="ringcontainer" id="seventhring">
-            <video class="videoelement" width="300" muted playsinline loop>
-                <source src="img/gif5.mp4" type="video/mp4">
+        <div class="ringcontainer translateelement" id="seventhring">
+            <video class="videoelement" width="400" muted playsinline loop poster="img/videoposter3.png">
+                <source src="img/gif3.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </div>
         <div class="ringcontainer" id="eightring">
-            <img class="rotateelement" src="img/ring16.jpg" alt="">
+            <img class="rotateelement" src="img/ring6.jpg" alt="teanjd ring sormus">
         </div>
         <div class="ringcontainer" id="ninthring">
-            <img class="translateelement" src="img/ring11.jpg" alt="">
+            <img class="translateelement" src="img/ring7.jpg" alt="teanjd ring sormus">
         </div>
 
 
@@ -150,9 +148,9 @@
 
         <!-- images at the bottom of the page -->
         <div class="imggrid">
-            <img src="img/3dprint1.jpeg" alt="">
-            <img src="img/ringmaking1.jpeg" alt="">
-            <img src="img/3dprint2.jpeg" alt="">
+            <img src="img/3dprint1.jpeg" alt="teanjd ring sormus">
+            <img src="img/ringmaking1.jpeg" alt="teanjd ring sormus">
+            <img src="img/3dprint2.jpeg" alt="teanjd ring sormus">
         </div>
 
 
@@ -161,13 +159,11 @@
                 <p>&copy; 2024 Tean JD</p>
             </strong>
             <div class="footerimage">
-                <img src="img/footerimage.jpg" alt="">
+                <img src="img/footerimage.jpg" alt="teanjd logo footer">
             </div>
         </footer>
 
     </main>
-
-
 
     <script>
 
@@ -404,28 +400,24 @@
             });
         }
 
+        function animations() {
+            videoFunctionality();
+            parallax();
+            zoomElements();
+            zoomAndTranslateElements();
+            zoomAndRotateElements();
+            rotateElements();
+            translateElements();
+        }
 
         // listening to scroll events for animations
-        window.addEventListener('scroll', function () {
-            videoFunctionality();
-            parallax();
-            zoomElements();
-            zoomAndTranslateElements();
-            zoomAndRotateElements();
-            rotateElements();
-            translateElements();
-        });
+        window.addEventListener('scroll', animations);
+
 
         // initializing animations
-        window.addEventListener('load', function () {
-            videoFunctionality();
-            parallax();
-            zoomElements();
-            zoomAndTranslateElements();
-            zoomAndRotateElements();
-            rotateElements();
-            translateElements();
-        });
+        window.addEventListener('load', animations);
+        window.addEventListener('resize', animations);
+
 
         // window.addEventListener('resize', updateMediaClasses);
 
