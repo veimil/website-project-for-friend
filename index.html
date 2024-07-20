@@ -58,7 +58,7 @@
         </div>
 
         <div class="ringcontainer video translateelement" id="secondring">
-            <video class="videoelement" width="400" muted playsinline loop>
+            <video class="videoelement" width="450" muted playsinline loop>
                 <source src="img/sormus1.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
@@ -79,7 +79,7 @@
             <img class="zoomrotateelement" src="img/ring8.jpg" alt="">
         </div>
         <div class="ringcontainer video" id="fourthring">
-            <video class="videoelement" width="300" muted playsinline loop>
+            <video class="videoelement" width="450" muted playsinline loop>
                 <source src="img/gif4.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
@@ -171,6 +171,57 @@
 
     <script>
 
+
+        function videoFunctionality() {
+            const videos = document.querySelectorAll('.videoelement');
+
+            // Function to play the video
+            const playVideo = (entries, observer) => {
+                entries.forEach(entry => {
+                    const video = entry.target;
+                    if (entry.isIntersecting) {
+                        video.play();
+                    } else {
+                        video.pause(); // Optional: pause the video when it leaves the viewport
+                    }
+                });
+            };
+
+            // Create an Intersection Observer
+            const observer = new IntersectionObserver(playVideo, {
+                root: null, // Use the viewport as the root
+                threshold: 0.01 // Play the video when 1% of it is visible
+            });
+
+            // Observe each video element
+            videos.forEach(video => {
+                observer.observe(video);
+            });
+        };
+
+
+
+        // function updateMediaClasses() {
+        //     const mediaElements = document.querySelectorAll('.ringcontainer img, .ringcontainer video');
+        //     console.log(mediaElements);
+        //     const viewportWidth = window.innerWidth;
+
+        //     mediaElements.forEach(element => {
+        //         if (viewportWidth >= 1200) {
+        //             element.classList.add('large-screen');
+        //             element.classList.remove('medium-screen', 'small-medium-screen');
+        //         } else if (viewportWidth >= 768) {
+        //             element.classList.add('medium-screen');
+        //             element.classList.remove('small-medium-screen', 'large-screen');
+        //         } else if (viewportWidth >= 600) {
+        //             element.classList.add('small-medium-screen');
+        //             element.classList.remove('large-screen', 'medium-screen');
+        //         } else {
+        //             element.classList.remove('large-screen', 'medium-screen', 'small-medium-screen');
+        //         }
+        //     });
+        // }
+
         // function changeBackgroundOnScroll() {
         //     const body = document.body;
 
@@ -183,26 +234,7 @@
         //     }
         // }
 
-        function updateMediaClasses() {
-            const mediaElements = document.querySelectorAll('.ringcontainer img, .ringcontainer video');
-            console.log(mediaElements);
-            const viewportWidth = window.innerWidth;
 
-            mediaElements.forEach(element => {
-                if (viewportWidth >= 1200) {
-                    element.classList.add('large-screen');
-                    element.classList.remove('medium-screen', 'small-medium-screen');
-                } else if (viewportWidth >= 768) {
-                    element.classList.add('medium-screen');
-                    element.classList.remove('small-medium-screen', 'large-screen');
-                } else if (viewportWidth >= 600) {
-                    element.classList.add('small-medium-screen');
-                    element.classList.remove('large-screen', 'medium-screen');
-                } else {
-                    element.classList.remove('large-screen', 'medium-screen', 'small-medium-screen');
-                }
-            });
-        }
 
         function parallax() {
             const h1Parallax = document.querySelector('.h1-parallax');
@@ -220,13 +252,15 @@
             h1Parallax.style.transform = `translateY(${initialOffset + scrollTop * speed}px)`;
         }
 
-        function zoomImages() {
-            const zoomElements = document.querySelectorAll('.zoomelement');
-            const maxZoom = 1.2; // Maximum scale value
+
+
+        function zoomElements() {
+            const zoomelements = document.querySelectorAll('.zoomelement');
+            const maxZoom = 1.3; // Maximum scale value
             const initialScale = 0.7;
             const windowHeight = window.innerHeight;
 
-            zoomElements.forEach(zoomElement => {
+            zoomelements.forEach(zoomElement => {
                 const elementTop = zoomElement.offsetTop;
                 const scrollPosition = window.scrollY;
                 const elementHeight = zoomElement.offsetHeight;
@@ -244,67 +278,8 @@
         }
 
 
-        function rotateImages() {
-            const rotateElements = document.querySelectorAll('.rotateelement');
-            const maxRotation = 45; // Maximum rotation angle in degrees
-            const windowHeight = window.innerHeight;
 
-            rotateElements.forEach(rotateElement => {
-                const elementTop = rotateElement.offsetTop;
-                const scrollPosition = window.scrollY;
-                const elementHeight = rotateElement.offsetHeight;
-
-                let rotationValue = 0; // Initial rotation value
-                if (scrollPosition + windowHeight > elementTop && scrollPosition < elementTop + elementHeight) {
-                    const relativeScrollPosition = scrollPosition + windowHeight - elementTop;
-                    rotationValue = (relativeScrollPosition / (elementHeight + windowHeight)) * maxRotation;
-                }
-
-                rotationValue = Math.min(maxRotation, Math.max(0, rotationValue));
-                rotateElement.style.transform = `rotate(${rotationValue}deg)`;
-            });
-        }
-
-
-        function zoomAndRotateImages() {
-            const elements = document.querySelectorAll('.zoomrotateelement');
-            const maxZoom = 1.2; // Maximum scale value
-            const initialScale = 0.4;
-            const maxRotation = 360; // Maximum rotation angle in degrees
-            const initialRotation = 270; // Initial rotation value in degrees
-            const rotationSpeed = 0.15; // Rotation speed factor
-            const windowHeight = window.innerHeight;
-
-            elements.forEach(element => {
-                const elementTop = element.offsetTop;
-                const scrollPosition = window.scrollY;
-                const elementHeight = element.offsetHeight;
-
-                let scaleValue = initialScale;
-                let rotationValue = initialRotation; // Start with initial rotation value
-
-                if (scrollPosition + windowHeight > elementTop && scrollPosition < elementTop + elementHeight) {
-                    const relativeScrollPosition = scrollPosition + windowHeight - elementTop;
-                    scaleValue = initialScale + (relativeScrollPosition / (elementHeight + windowHeight)) * (maxZoom - initialScale);
-
-                    // Calculate the rotation value based on scroll position, starting from initialRotation
-                    rotationValue = initialRotation + relativeScrollPosition * rotationSpeed;
-                }
-
-                // Ensure the rotation value does not exceed maxRotation
-                rotationValue = Math.min(maxRotation, Math.max(initialRotation, rotationValue));
-                scaleValue = Math.min(maxZoom, Math.max(initialScale, scaleValue));
-
-                element.style.transform = `scale(${scaleValue}) rotate(${rotationValue}deg)`;
-            });
-        }
-
-        // Optionally, you can call the function on scroll to see the effect
-        window.addEventListener('scroll', zoomAndRotateImages);
-
-
-
-        function zoomAndTranslateImages() {
+        function zoomAndTranslateElements() {
             const zoomTranslateElements = document.querySelectorAll('.zoomtranslateelement');
             const maxZoom = 1.2; // Maximum scale value
             const initialScale = 0.5;
@@ -341,6 +316,66 @@
             });
         }
 
+
+
+        function zoomAndRotateElements() {
+            const elements = document.querySelectorAll('.zoomrotateelement');
+            const maxZoom = 1.2; // Maximum scale value
+            const initialScale = 0.3;
+            const maxRotation = 360; // Maximum rotation angle in degrees
+            const initialRotation = 270; // Initial rotation value in degrees
+            const rotationSpeed = 0.15; // Rotation speed factor
+            const windowHeight = window.innerHeight;
+
+            elements.forEach(element => {
+                const elementTop = element.offsetTop;
+                const scrollPosition = window.scrollY;
+                const elementHeight = element.offsetHeight;
+
+                let scaleValue = initialScale;
+                let rotationValue = initialRotation; // Start with initial rotation value
+
+                if (scrollPosition + windowHeight > elementTop && scrollPosition < elementTop + elementHeight) {
+                    const relativeScrollPosition = scrollPosition + windowHeight - elementTop;
+                    scaleValue = initialScale + (relativeScrollPosition / (elementHeight + windowHeight)) * (maxZoom - initialScale);
+
+                    // Calculate the rotation value based on scroll position, starting from initialRotation
+                    rotationValue = initialRotation + relativeScrollPosition * rotationSpeed;
+                }
+
+                // Ensure the rotation value does not exceed maxRotation
+                rotationValue = Math.min(maxRotation, Math.max(initialRotation, rotationValue));
+                scaleValue = Math.min(maxZoom, Math.max(initialScale, scaleValue));
+
+                element.style.transform = `scale(${scaleValue}) rotate(${rotationValue}deg)`;
+            });
+        }
+
+
+
+        function rotateElements() {
+            const rotateelements = document.querySelectorAll('.rotateelement');
+            const maxRotation = 45; // Maximum rotation angle in degrees
+            const windowHeight = window.innerHeight;
+
+            rotateelements.forEach(rotateElement => {
+                const elementTop = rotateElement.offsetTop;
+                const scrollPosition = window.scrollY;
+                const elementHeight = rotateElement.offsetHeight;
+
+                let rotationValue = 0; // Initial rotation value
+                if (scrollPosition + windowHeight > elementTop && scrollPosition < elementTop + elementHeight) {
+                    const relativeScrollPosition = scrollPosition + windowHeight - elementTop;
+                    rotationValue = (relativeScrollPosition / (elementHeight + windowHeight)) * maxRotation;
+                }
+
+                rotationValue = Math.min(maxRotation, Math.max(0, rotationValue));
+                rotateElement.style.transform = `rotate(${rotationValue}deg)`;
+            });
+        }
+
+
+
         function translateElements() {
             const translateElements = document.querySelectorAll('.translateelement');
             const maxTranslateY = 100; // Maximum translation value in pixels
@@ -371,58 +406,46 @@
 
 
 
-
-        window.addEventListener('scroll', function () {
-            // changeBackgroundOnScroll();
-            translateElements();
+        function animate() {
             parallax();
-            zoomImages();
-            rotateImages();
-            zoomAndRotateImages();
-            zoomAndTranslateImages();
-            slowElements();
-        });
+            zoomElements();
+            zoomAndTranslateElements();
+            zoomAndRotateElements();
+            rotateElements();
+            translateElements();
+
+            // Request the next frame
+            requestAnimationFrame(animate);
+        }
+
+        // Initialize the animation loop
+        requestAnimationFrame(animate);
+
+
+
+
+        // window.addEventListener('scroll', function () {
+        //     videoFunctionality();
+        //     parallax();
+        //     zoomElements();
+        //     zoomAndTranslateElements();
+        //     zoomAndRotateElements();
+        //     rotateElements();
+        //     translateElements();
+        // });
 
         window.addEventListener('load', function () {
-            translateElements();
-            updateMediaClasses();
+            videoFunctionality();
             parallax();
-            zoomImages();
-            rotateImages();
-            zoomAndRotateImages();
-            zoomAndTranslateImages();
-            translateImages();
-            slowElements();
+            zoomElements();
+            zoomAndTranslateElements();
+            zoomAndRotateElements();
+            rotateElements();
+            translateElements();
         });
 
-        window.addEventListener('resize', updateMediaClasses);
+        // window.addEventListener('resize', updateMediaClasses);
 
-        document.addEventListener('DOMContentLoaded', function () {
-            const videos = document.querySelectorAll('.videoelement');
-
-            // Function to play the video
-            const playVideo = (entries, observer) => {
-                entries.forEach(entry => {
-                    const video = entry.target;
-                    if (entry.isIntersecting) {
-                        video.play();
-                    } else {
-                        video.pause(); // Optional: pause the video when it leaves the viewport
-                    }
-                });
-            };
-
-            // Create an Intersection Observer
-            const observer = new IntersectionObserver(playVideo, {
-                root: null, // Use the viewport as the root
-                threshold: 0.01 // Play the video when 1% of it is visible
-            });
-
-            // Observe each video element
-            videos.forEach(video => {
-                observer.observe(video);
-            });
-        });
 
     </script>
 
