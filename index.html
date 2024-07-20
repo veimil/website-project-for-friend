@@ -405,35 +405,18 @@
         }
 
 
-
-        function animate() {
+        // listening to scroll events for animations
+        window.addEventListener('scroll', function () {
+            videoFunctionality();
             parallax();
             zoomElements();
             zoomAndTranslateElements();
             zoomAndRotateElements();
             rotateElements();
             translateElements();
+        });
 
-            // Request the next frame
-            requestAnimationFrame(animate);
-        }
-
-        // Initialize the animation loop
-        requestAnimationFrame(animate);
-
-
-
-
-        // window.addEventListener('scroll', function () {
-        //     videoFunctionality();
-        //     parallax();
-        //     zoomElements();
-        //     zoomAndTranslateElements();
-        //     zoomAndRotateElements();
-        //     rotateElements();
-        //     translateElements();
-        // });
-
+        // initializing animations
         window.addEventListener('load', function () {
             videoFunctionality();
             parallax();
