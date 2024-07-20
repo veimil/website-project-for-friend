@@ -2,10 +2,8 @@
 
 /* variables */
 :root {
-    --primary: rgb(253, 253, 159);
-    --secondary: #ececec;
-    --semidark: #454545;
-    --darker: #333;
+    --primary: #ececec;
+    --darkgradient: #232323;
 }
 
 *,
@@ -29,13 +27,13 @@ ul {
 
 a {
     text-decoration: none;
-    color: var(--secondary);
+    color: var(--primary);
 }
 
 body {
     font-family: "Poppins", sans-serif;
     font-weight: 300;
-    color: var(--secondary);
+    color: var(--primary);
     text-align: left;
     background-color: black;
     overflow-x: hidden;
@@ -48,7 +46,7 @@ body {
 h1 {
     font-family: "Poppins", sans-serif;
     font-weight: 300;
-    color: var(--secondary);
+    color: var(--primary);
 }
 
 @keyframes fadeIn {
@@ -232,7 +230,7 @@ main {
 
 .parallax-container {
     grid-column: span 12;
-    background-image: linear-gradient(black, rgb(35, 35, 35), black);
+    background-image: linear-gradient(black, var(--darkgradient), black);
     background-attachment: fixed;
     width: 100%;
     height: 200px;
@@ -277,12 +275,12 @@ main {
 }
 
 .videoelement {
-    max-width: 90%;
+    max-width: 80%;
     border-radius: 40px;
     margin-bottom: 20px;
 }
 
-#secondring{
+#secondring {
     padding-top: 0;
 }
 
@@ -293,15 +291,17 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: linear-gradient(140deg, black, rgb(35, 35, 35), black);
+    background-image: linear-gradient(140deg, black, var(--darkgradient), black);
     padding: 20px 30px;
     margin: 0 auto;
     max-width: 87%;
     border-radius: 30px;
     min-width: fit-content;
-    box-shadow: 
-    0 0px 40px rgba(255, 255, 255, 0.1), /* White glow at the top */
-    0 0px 40px rgba(255, 255, 255, 0.1); /* White glow at the bottom */
+    box-shadow:
+        0 0px 40px rgba(255, 255, 255, 0.1),
+        /* White glow at the top */
+        0 0px 40px rgba(255, 255, 255, 0.1);
+    /* White glow at the bottom */
 
 }
 
@@ -309,14 +309,12 @@ main {
     gap: 40px;
     justify-content: space-between;
     margin: 50px auto;
-    /* border: 2px solid #333; */
-
 }
 
 
 .contact h2 {
 
-    color: var(--secondary);
+    color: var(--primary);
     width: auto;
     font-size: 1.5em;
     text-align: left;
@@ -351,8 +349,8 @@ main {
     max-width: 100vw;
     /* font-size: 0; */
     overflow: hidden;
-    border-bottom: 20px solid var(--secondary);
-    border-top: 20px solid var(--secondary);
+    border-bottom: 20px solid var(--primary);
+    border-top: 20px solid var(--primary);
 
 
 }
@@ -392,7 +390,7 @@ footer p {
 
 
 
-/* media queries */ 
+/* media queries */
 
 
 @media screen and (min-width: 300px) {
@@ -433,7 +431,8 @@ footer p {
         height: 250px;
         margin-bottom: 100px;
     }
-    #secondring{
+
+    #secondring {
         padding: 60px 0;
     }
 
@@ -525,10 +524,11 @@ footer p {
         font-size: 8em;
     }
 
-    .headertext{
+    .headertext {
         background: linear-gradient(rgb(40, 40, 40), black);
 
     }
+
     .headertext img {
         max-width: 40%;
 
@@ -564,10 +564,11 @@ footer p {
 
 @media screen and (min-width: 1390px) {
 
-    .headertext{
-        background: linear-gradient(rgb(35, 35, 35), black);
+    .headertext {
+        background: linear-gradient(var(--darkgradient), black);
 
     }
+
     .welcomeimg {
         max-width: 40%;
     }
