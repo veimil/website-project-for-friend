@@ -293,15 +293,12 @@ main {
     align-items: center;
     background-image: linear-gradient(140deg, black, var(--darkgradient), black);
     padding: 20px 30px;
+    padding-top: 15px;
     margin: 0 auto;
     max-width: 87%;
     border-radius: 30px;
     min-width: fit-content;
-    box-shadow:
-        0 0px 40px rgba(255, 255, 255, 0.1),
-        /* White glow at the top */
-        0 0px 40px rgba(255, 255, 255, 0.1);
-    /* White glow at the bottom */
+    box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.3);
 
 }
 
@@ -309,6 +306,10 @@ main {
     gap: 40px;
     justify-content: space-between;
     margin: 50px auto;
+    box-shadow: none;
+    /* border: 10px solid rgb(88, 88, 88); */
+    border: 5px solid var(--primary);
+
 }
 
 
@@ -335,9 +336,23 @@ main {
 }
 
 .socials li {
+    border-radius: 15px;
+}
+
+.socials li a {
+    display: block;
+    /* Make the a tag fill the entire li */
+    width: 100%;
+    height: 100%;
     padding: 10px 20px;
     background-color: #454545;
     border-radius: 15px;
+    text-align: center;
+}
+
+.socials li a:hover {
+    color: black;
+    background-color: #f0f0f0;
 }
 
 
@@ -349,8 +364,6 @@ main {
     max-width: 100vw;
     /* font-size: 0; */
     overflow: hidden;
-    border-bottom: 20px solid var(--primary);
-    border-top: 20px solid var(--primary);
 
 
 }
@@ -369,6 +382,7 @@ footer {
     text-align: center;
     justify-content: center;
     padding: 30px 10px;
+    background: linear-gradient(rgb(50, 50, 50), black);
 }
 
 .footerimage {
@@ -443,7 +457,8 @@ footer p {
     .card {
         grid-column: 3 / 11;
         margin: 100px auto;
-        padding: 30px 45px;
+        padding: 20px 30px;
+        padding-top: 15px;
     }
 
 
@@ -508,11 +523,18 @@ footer p {
         flex-direction: row;
         align-items: baseline;
         justify-content: center;
+        padding-top: 15px auto;
+        padding-bottom: 25px;
+        border: none;
+        border-bottom: 10px solid grey;
+        border-top: 10px solid grey;
+
+        border-radius: 0;
 
     }
 
     .contact {
-        gap: 60px;
+        gap: 50px;
     }
 }
 
@@ -587,28 +609,24 @@ footer p {
 
     #firstring,
     #thirdring,
-    #fifthring {
+    #fifthring,
+    #seventhring {
         grid-column: 3 / 6;
     }
 
     #secondring,
     #fourthring,
-    #sixthring {
+    #sixthring,
+    #eightring {
         grid-column: 8 / 11;
     }
 
-    #seventhring {
-        grid-column: 2 / 5;
-    }
-
-    #eightring {
-        grid-column: 5 / 9;
-        max-width: 70%;
-    }
 
     #ninthring {
-        grid-column: 9 / 12;
+        grid-column: 5 / 9;
+        max-width: 80%;
     }
+
 
     .contact div {
         margin-left: 100px;
